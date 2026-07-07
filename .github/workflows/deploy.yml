@@ -71,7 +71,7 @@ jobs:
               exp=$(grep -c 'slug:' src/lib/data/products.ts)
               act=$(ls build/products/*/index.html | wc -l)
               test "$exp" -eq "$act" || { echo "::error::vfamigos products: expected $exp pages, built $act (entries() gap)"; exit 1; }
-              grep -rq "add to cart\|Add to Cart\|disabled" build/products/*/index.html || { echo "::error::vfamigos PDP missing real content"; exit 1; }
+              grep -rq "Add to collection" build/products/*/index.html || { echo "::error::vfamigos PDP missing add-to-collection button"; exit 1; }
               ;;
             lidentist)
               exp=$(grep -c 'slug:' src/lib/data/dentists.ts)

@@ -1,5 +1,6 @@
 <script lang="ts">
   import { base } from '$app/paths';
+  import { cart } from '$lib/cart.svelte';
   import type { PageData } from './$types';
 
   let { data }: { data: PageData } = $props();
@@ -29,11 +30,15 @@
 
       <div class="buy">
         <span class="price">${product.price}</span>
-        <button class="add" type="button" disabled aria-describedby="cart-note">
+        <button
+          class="add"
+          type="button"
+          onclick={() => cart.add(product)}
+          aria-label="Add {product.name} to cart"
+        >
           Add to collection
         </button>
       </div>
-      <p id="cart-note" class="cart-note">Cart coming soon — checkout opens in the next release.</p>
     </div>
   </div>
 </article>
@@ -143,13 +148,11 @@
     font-family: var(--font-heading);
     font-weight: 600;
     font-size: 1.0625rem;
-    cursor: not-allowed;
-    opacity: 0.6;
+    cursor: pointer;
+    transition: transform 150ms ease-out;
   }
-  .cart-note {
-    margin: 0.75rem 0 0;
-    font-size: 0.875rem;
-    color: var(--color-text);
+  .add:active {
+    transform: scale(0.98);
   }
   @media (max-width: 720px) {
     .layout {

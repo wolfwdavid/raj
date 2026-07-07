@@ -1,8 +1,16 @@
 <script lang="ts">
   import '$lib/styles/tokens.css';
+  import { onMount } from 'svelte';
   import SiteHeader from '$lib/components/SiteHeader.svelte';
   import SiteFooter from '$lib/components/SiteFooter.svelte';
+  import { hydrate as hydrateCart } from '$lib/cart.svelte';
   let { children } = $props();
+
+  // Client-only cart restore — onMount never runs on the server, so localStorage is
+  // never touched during prerender. Badge fills in after mount (no empty-flash on repeat visits).
+  onMount(() => {
+    hydrateCart();
+  });
 </script>
 
 <a class="skip-link" href="#main">Skip to content</a>
