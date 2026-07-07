@@ -1,8 +1,8 @@
 ---
 phase: 1
 slug: deploy-pipeline-walking-skeleton
-status: draft
-nyquist_compliant: false
+status: approved
+nyquist_compliant: true
 wave_0_complete: false
 created: 2026-07-06
 ---
@@ -62,11 +62,11 @@ Existing infrastructure covers all phase requirements — no test framework inst
 
 ## Validation Sign-Off
 
-- [ ] All tasks have `<automated>` verify or Wave 0 dependencies
-- [ ] Sampling continuity: no 3 consecutive tasks without automated verify
-- [ ] Wave 0 covers all MISSING references (none)
-- [ ] No watch-mode flags
-- [ ] Feedback latency < 120s local
-- [ ] `nyquist_compliant: true` set in frontmatter
+- [x] All tasks have `<automated>` verify or Wave 0 dependencies
+- [x] Sampling continuity: no 3 consecutive tasks without automated verify
+- [x] Wave 0 covers all MISSING references (none)
+- [x] No watch-mode flags
+- [x] Feedback latency < 120s local (accepted tradeoff documented above)
+- [x] `nyquist_compliant: true` set in frontmatter
 
-**Approval:** pending
+**Approval:** approved 2026-07-06 (plan-checker pass, 8a–8d satisfied)
