@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 05-01-PLAN.md
-last_updated: "2026-07-07T07:38:30.924Z"
+stopped_at: Completed 05-02-PLAN.md
+last_updated: "2026-07-07T07:46:35.826Z"
 progress:
   total_phases: 5
-  completed_phases: 4
+  completed_phases: 5
   total_plans: 14
-  completed_plans: 13
+  completed_plans: 14
 ---
 
 # Project State
@@ -59,6 +59,7 @@ Plan: 2 of 2
 | Phase 04 P01 | 7 | 3 tasks | 8 files |
 | Phase 04 P02 | 7 | 2 tasks | 10 files |
 | Phase 05 P01 | 25 | 3 tasks | 23 files |
+| Phase 05 P02 | 5 | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -95,6 +96,8 @@ Recent decisions affecting current work:
 - [Phase 04]: lidentist /appointment reads ?dentist= client-side in an $effect to pre-select the dentist so the route prerenders with no query
 - [Phase 05]: SITE_URL defaults to live Pages origin+subpath; VITE_SITE_URL flips to custom domain at cutover with no code change
 - [Phase 05]: canonical/OG use $derived(SITE_URL + path) — absolute, SITE_URL-driven, never BASE_PATH, reactive across SPA nav
+- [Phase 05]: cannaworldnews article pages emit article:published_time (frontmatter ISO date) + og:type=article via Seo type/publishedTime props; front/region stay og:type=website (NEWS-04)
+- [Phase 05]: D-06 compliance gate is CI-enforced in deploy.yml (per-site build leg): site-wide no-fake-success (excludes vfamigos /thanks/) + per-page title/desc/https-canonical + cannaworldnews disclaimer + lidentist FTC label + lipool no-aggregateRating; verified it bites on injected violations
 
 ### Pending Todos
 
@@ -109,6 +112,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-07-07T07:38:14.361Z
-Stopped at: Completed 05-01-PLAN.md
+Last session: 2026-07-07T07:46:18.318Z
+Stopped at: Completed 05-02-PLAN.md
 Resume file: None

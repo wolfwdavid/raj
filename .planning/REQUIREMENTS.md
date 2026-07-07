@@ -46,8 +46,8 @@
 - [x] **NEWS-01**: A reader sees an editorial front page (lead story + per-region sections) built from 12+ seeded markdown articles with region frontmatter
 - [x] **NEWS-02**: A reader can open any article at `/articles/[slug]/` with kicker, headline, byline/date (`<time>` between headline and body), rendered markdown, and related-by-region links
 - [x] **NEWS-03**: A reader can browse per-region rivers at `/region/[region]/` (Americas, Europe, Africa, Asia-Pacific)
-- [ ] **NEWS-04**: Every article page emits correct meta/OG tags (title, description, article:published_time) with SITE_URL-driven absolute URLs
-- [ ] **NEWS-05**: The site displays an informational-only disclaimer (news reporting, not legal/medical advice) in the footer — compliance gate
+- [x] **NEWS-04**: Every article page emits correct meta/OG tags (title, description, article:published_time) with SITE_URL-driven absolute URLs
+- [x] **NEWS-05**: The site displays an informational-only disclaimer (news reporting, not legal/medical advice) in the footer — compliance gate
 
 ### Cross-cutting Quality
 
@@ -113,8 +113,8 @@
 | VFAM-05 | Phase 4 | Complete |
 | POOL-03 | Phase 4 | Complete |
 | DENT-04 | Phase 4 | Complete |
-| NEWS-04 | Phase 5 | Pending |
-| NEWS-05 | Phase 5 | Pending |
+| NEWS-04 | Phase 5 | Complete |
+| NEWS-05 | Phase 5 | Complete |
 | QUAL-04 | Phase 5 | Complete |
 
 **Coverage:**
