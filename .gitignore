@@ -1,0 +1,11 @@
+# Each raj_* site is its own standalone git repo — keep them out of the parent repo
+raj_*/
+
+# Build artifacts (all sites)
+node_modules/
+build/
+.svelte-kit/
+
+# Misc
+*.log
+.DS_Store
