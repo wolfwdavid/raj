@@ -96,9 +96,9 @@ Plans (Wave 1 = 04-01 and 04-02 run in parallel — disjoint site file sets):
   4. A final audit confirms no fake success states exist and all lidentist sample data remains unmistakably labeled (FTC Reviews Rule gate cleared).
 **Plans**: 2 plans
 
-Plans:
-- [ ] 05-01: Hand-rolled Seo component — SITE_URL-driven titles/meta/canonical/OG across all four sites
-- [ ] 05-02: cannaworldnews article OG/published_time + cannabis disclaimer + final no-fake-success / demo-label compliance audit
+Plans (Wave 1 = 05-01; Wave 2 = 05-02 depends on 05-01):
+- [ ] 05-01-PLAN.md — Hand-rolled Seo.svelte (per site) + SITE_URL config knob + <Seo> on all 15 pages/routes across the four sites (SITE_URL-driven title/description/canonical/OG, never BASE_PATH) — QUAL-04
+- [ ] 05-02-PLAN.md — cannaworldnews article:published_time + og:type=article + finalized informational-only footer disclaimer + CI Compliance Gate in deploy.yml (site-wide no-fake-success + per-page SEO meta + disclaimer + FTC label + no-aggregateRating) — NEWS-04, NEWS-05
 
 ## Progress
 
