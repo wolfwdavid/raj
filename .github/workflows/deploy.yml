@@ -34,10 +34,30 @@ jobs:
           cache-dependency-path: ${{ matrix.site }}/package-lock.json
       - run: npm ci
         working-directory: ${{ matrix.site }}
-      - run: npm run build
+      - name: Type-check (svelte-check gate)              # D-09 / QUAL-02
+        run: npm run check
+        working-directory: ${{ matrix.site }}
+      - name: Build without base (custom-domain readiness) # INFRA-04 — proves BASE_PATH='' builds
+        run: npm run build
+        working-directory: ${{ matrix.site }}
+        env:
+          BASE_PATH: ''
+      - run: npm run build                                # deployed artifact (BASE_PATH set)
         working-directory: ${{ matrix.site }}
         env:
           BASE_PATH: /${{ github.event.repository.name }}/${{ matrix.site }}   # e.g. /raj/vfamigos
+      - name: Portability guard — built HTML             # D-08 / INFRA-06
+        working-directory: ${{ matrix.site }}
+        run: |
+          set -euo pipefail
+          # Fail on root-absolute href/src (incl. any hardcoded /raj/... link or asset).
+          # Allows ./ relative, // protocol-relative, https:// absolute, and the
+          # base-derived hydration `assets:` JSON (not an href/src attribute).
+          if grep -rnE '(href|src)="/[^/]' build --include="*.html"; then
+            echo "::error::${{ matrix.site }}: root-absolute href/src (incl. hardcoded /raj/) in built HTML — use {base} from \$app/paths or relative paths"
+            exit 1
+          fi
+          echo "portability guard passed for ${{ matrix.site }}"
       - uses: actions/upload-artifact@v4       # plain artifact — NOT the Pages-specific uploader
         with:
           name: site-${{ matrix.site }}
