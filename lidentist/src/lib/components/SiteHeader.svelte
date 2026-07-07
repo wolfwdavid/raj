@@ -21,8 +21,7 @@
       <li><a href="{base}/#directory">Find a Dentist</a></li>
       <li><a href="{base}/#how">How it Works</a></li>
       <li>
-        <!-- rel=external: route lands in Phase 3; drop rel then -->
-        <a class="cta" href="{base}/appointment/" rel="external">
+        <a class="cta" href="{base}/appointment/">
           <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <rect x="3" y="4.5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.7" />
             <path d="M3 9h18M8 2.5v4M16 2.5v4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
