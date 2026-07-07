@@ -12,11 +12,11 @@ This project ships four genuinely different websites — a collectibles e-commer
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Deploy Pipeline (Walking Skeleton)** - One push deploys a live hub linking four placeholder site subpaths on GitHub Pages
-- [ ] **Phase 2: Per-Site Shells + Scaffold Conventions** - Four independent SvelteKit apps with correct prerender/portability conventions and distinct design systems
-- [ ] **Phase 3: Content + Dynamic Routes** - Every site presents its real typed content across all static and dynamic routes, fully prerendered
-- [ ] **Phase 4: Conversion Paths** - Each site's real conversion path (cart/checkout, lead forms) works end-to-end with no fake success states
-- [ ] **Phase 5: SEO Hardening + Compliance Gate** - Every site is custom-domain-ready with correct metadata and passes its compliance gates
+- [x] **Phase 1: Deploy Pipeline (Walking Skeleton)** - One push deploys a live hub linking four placeholder site subpaths on GitHub Pages (completed 2026-07-07)
+- [x] **Phase 2: Per-Site Shells + Scaffold Conventions** - Four independent SvelteKit apps with correct prerender/portability conventions and distinct design systems (completed 2026-07-07)
+- [x] **Phase 3: Content + Dynamic Routes** - Every site presents its real typed content across all static and dynamic routes, fully prerendered (completed 2026-07-07)
+- [x] **Phase 4: Conversion Paths** - Each site's real conversion path (cart/checkout, lead forms) works end-to-end with no fake success states (completed 2026-07-07)
+- [x] **Phase 5: SEO Hardening + Compliance Gate** - Every site is custom-domain-ready with correct metadata and passes its compliance gates (completed 2026-07-07)
 
 ## Phase Details
 
@@ -107,8 +107,8 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Deploy Pipeline | 0/2 | Not started | - |
-| 2. Per-Site Shells | 0/3 | Not started | - |
-| 3. Content + Routes | 3/5 | In Progress|  |
-| 4. Conversion Paths | 0/2 | Planned | - |
-| 5. SEO + Compliance | 0/2 | Not started | - |
+| 1. Deploy Pipeline | 2/2 | Complete | 2026-07-07 |
+| 2. Per-Site Shells | 3/3 | Complete | 2026-07-07 |
+| 3. Content + Routes | 5/5 | Complete | 2026-07-07 |
+| 4. Conversion Paths | 2/2 | Complete | 2026-07-07 |
+| 5. SEO + Compliance | 2/2 | Complete | 2026-07-07 |
