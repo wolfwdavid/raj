@@ -1,0 +1,30 @@
+:root {
+  /* palette — verbatim from .planning/design/lidentist.md (calm cyan + health-green CTA) */
+  --color-primary: #0891B2;
+  --color-on-primary: #FFFFFF;
+  --color-secondary: #22D3EE;
+  --color-accent: #059669;
+  --color-background: #ECFEFF;
+  --color-surface: #FFFFFF;
+  --color-foreground: #164E63;
+  --color-muted: #E8F1F6;
+  --color-muted-foreground: #64748B;
+  --color-border: #A5F3FC;
+  --color-destructive: #DC2626;
+  --color-ring: #0891B2;
+  /* rating star color — numeric value always shown alongside (never color-only) */
+  --color-rating: #D97706;
+
+  /* fonts — families must match the app.html <link> */
+  --font-heading: 'Lexend', system-ui, sans-serif;
+  --font-body: 'Source Sans 3', system-ui, sans-serif;
+
+  /* type scale — 14/16/18/22/28/36, base 16px minimum everywhere */
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.375rem;
+  --text-xl: 1.75rem;
+  --text-2xl: 2.25rem;
+  --line-body: 1.6;
+}
