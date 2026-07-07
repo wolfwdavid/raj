@@ -10,9 +10,9 @@
 - [x] **INFRA-01**: A visitor can reach all four sites from one GitHub Pages deployment at `wolfwdavid.github.io/raj/<site>/` after a single push to main
 - [x] **INFRA-02**: A visitor can navigate a hub page at `/raj/` linking to all four sites (relative links)
 - [x] **INFRA-03**: A visitor hitting an unknown URL gets a styled root 404 page linking to the four sites
-- [ ] **INFRA-04**: Each site builds independently with its own package.json/lockfile (`npm ci && npm run build` succeeds per folder, with and without BASE_PATH)
+- [x] **INFRA-04**: Each site builds independently with its own package.json/lockfile (`npm ci && npm run build` succeeds per folder, with and without BASE_PATH)
 - [ ] **INFRA-05**: Every page of every site is fully prerendered — real content visible in built HTML source (prerender=true, trailingSlash='always', explicit entries() for all dynamic routes)
-- [ ] **INFRA-06**: CI fails if any built HTML contains hardcoded `/raj/` outside BASE_PATH-derived URLs or root-absolute asset paths (portability guard)
+- [x] **INFRA-06**: CI fails if any built HTML contains hardcoded `/raj/` outside BASE_PATH-derived URLs or root-absolute asset paths (portability guard)
 - [ ] **INFRA-07**: Deep links and hard refresh work on every prerendered route served by Pages (dir/index.html emitted per route)
 
 ### Vfamigos (collectibles e-commerce)
@@ -52,7 +52,7 @@
 ### Cross-cutting Quality
 
 - [ ] **QUAL-01**: Each site implements its committed design system (.planning/design/<site>.md): palette tokens, font pairing, layout patterns — four visually distinct sites
-- [ ] **QUAL-02**: Every site passes `npm run check` (svelte-check) with zero errors
+- [x] **QUAL-02**: Every site passes `npm run check` (svelte-check) with zero errors
 - [ ] **QUAL-03**: Every page meets baseline a11y: 4.5:1 text contrast, visible focus states, SVG icons (no emoji icons), semantic headings, reduced-motion respected
 - [ ] **QUAL-04**: Every site has per-page titles + meta descriptions; canonical/OG URLs derive from a configurable SITE_URL (never BASE_PATH)
 
@@ -86,10 +86,10 @@
 | INFRA-01 | Phase 1 | Complete |
 | INFRA-02 | Phase 1 | Complete |
 | INFRA-03 | Phase 1 | Complete |
-| INFRA-04 | Phase 2 | Pending |
-| INFRA-06 | Phase 2 | Pending |
+| INFRA-04 | Phase 2 | Complete |
+| INFRA-06 | Phase 2 | Complete |
 | QUAL-01 | Phase 2 | Pending |
-| QUAL-02 | Phase 2 | Pending |
+| QUAL-02 | Phase 2 | Complete |
 | QUAL-03 | Phase 2 | Pending |
 | INFRA-05 | Phase 3 | Pending |
 | INFRA-07 | Phase 3 | Pending |

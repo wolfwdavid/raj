@@ -47,7 +47,7 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — Shared scaffold conventions: extend deploy.yml build leg with svelte-check gate + empty-BASE_PATH build + built-HTML portability grep (root-absolute href/src); author 02-CONVENTIONS.md shell exemplar (tokens.css, app.html fonts, SiteHeader/SiteFooter/+layout skeleton, rel=external prerender-safe nav rule, a11y checklist)
+- [x] 02-01-PLAN.md — Shared scaffold conventions: extend deploy.yml build leg with svelte-check gate + empty-BASE_PATH build + built-HTML portability grep (root-absolute href/src); author 02-CONVENTIONS.md shell exemplar (tokens.css, app.html fonts, SiteHeader/SiteFooter/+layout skeleton, rel=external prerender-safe nav rule, a11y checklist)
 - [ ] 02-02-PLAN.md — vfamigos + lipool branded shells (design tokens, fonts, nav/footer, real hero, a11y baseline)
 - [ ] 02-03-PLAN.md — lidentist + cannaworldnews branded shells (design tokens, fonts, nav/masthead + footer, real hero, a11y baseline; lidentist = a11y exemplar)
 
