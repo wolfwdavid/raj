@@ -19,8 +19,7 @@
     <nav aria-label="Region index">
       <ul>
         {#each regions as r}
-          <!-- rel=external: route lands in Phase 3; drop rel then -->
-          <li><a href="{base}/region/{r.slug}/" rel="external">{r.label}</a></li>
+          <li><a href="{base}/region/{r.slug}/">{r.label}</a></li>
         {/each}
       </ul>
     </nav>

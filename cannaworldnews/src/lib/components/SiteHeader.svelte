@@ -1,8 +1,8 @@
 <script lang="ts">
   import { base } from '$app/paths';
 
-  // Region routes land in Phase 3 — each guarded with rel="external" so the prerender
-  // crawler does not follow them into a missing route. aria-current wiring is Phase 3.
+  // Region routes now exist (/region/[region]/ prerendered via entries()) so the rel="external"
+  // guard is dropped — these are plain crawlable internal links.
   const regions = [
     { label: 'Americas', slug: 'americas' },
     { label: 'Europe', slug: 'europe' },
@@ -20,8 +20,7 @@
     <ul>
       {#each regions as r}
         <li>
-          <!-- rel=external: route lands in Phase 3; drop rel then -->
-          <a href="{base}/region/{r.slug}/" rel="external">{r.label}</a>
+          <a href="{base}/region/{r.slug}/">{r.label}</a>
         </li>
       {/each}
     </ul>

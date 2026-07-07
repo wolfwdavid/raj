@@ -72,3 +72,15 @@ export function articlesByRegion(region: string): Article[] {
   // `articles` is already newest-first, so the filtered view preserves that order.
   return articles.filter((a) => a.region === region);
 }
+
+// Format an ISO YYYY-MM-DD string as e.g. "June 28, 2026" without timezone drift (parse the
+// parts directly rather than through the Date epoch, which would shift near midnight UTC).
+const MONTHS = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December'
+];
+export function formatDate(iso: string): string {
+  const [y, m, d] = iso.split('-').map(Number);
+  if (!y || !m || !d) return iso;
+  return `${MONTHS[m - 1]} ${d}, ${y}`;
+}

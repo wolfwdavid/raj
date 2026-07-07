@@ -1,42 +1,69 @@
 <script lang="ts">
-  // Front-page lead proving the Swiss editorial type system. Real article rivers arrive with
-  // the Phase-3 markdown pipeline; a single typographic lead card is enough to prove the aesthetic.
+  import { base } from '$app/paths';
+  import { articles, REGIONS, articlesByRegion, regionLabel, formatDate } from '$lib/articles';
+
+  // Newest article leads the front page. The rest fill per-region rivers below.
+  const lead = articles[0];
 </script>
 
 <div class="front">
-  <article class="lead" aria-labelledby="lead-title">
-    <p class="kicker">Americas</p>
-    <h1 id="lead-title">
-      Rescheduling reshapes the map of legal cannabis across the Americas
-    </h1>
-    <p class="dek">
-      As federal policy shifts, growers, regulators, and patients weigh what a new classification
-      means for medicine, commerce, and cross-border research — reported region by region.
-    </p>
-    <p class="byline">
-      <span>CannaWorldNews Desk</span>
-      <span class="sep" aria-hidden="true">·</span>
-      <time datetime="2026-07-07">July 7, 2026</time>
-    </p>
-  </article>
+  {#if lead}
+    <article class="lead" aria-labelledby="lead-title">
+      <p class="kicker">{regionLabel(lead.region)}</p>
+      <h1 id="lead-title">
+        <!-- rel=external: /articles/[slug]/ lands in Task 3; drop rel then -->
+        <a href="{base}/articles/{lead.slug}/" rel="external">{lead.title}</a>
+      </h1>
+      <p class="dek">{lead.dek}</p>
+      <p class="byline">
+        <span>{lead.author}</span>
+        <span class="sep" aria-hidden="true">·</span>
+        <time datetime={lead.date}>{formatDate(lead.date)}</time>
+      </p>
+    </article>
 
-  <aside class="secondary" aria-label="More coverage">
-    <p class="section-rule">Follow the world's cannabis policy shifts</p>
-    <ul>
-      <li>
-        <p class="s-kicker">Europe</p>
-        <h2>Pilot programs test regulated adult-use retail in three member states</h2>
-      </li>
-      <li>
-        <p class="s-kicker">Africa</p>
-        <h2>Medical export licenses expand as cultivation scales up</h2>
-      </li>
-      <li>
-        <p class="s-kicker">Asia-Pacific</p>
-        <h2>Courts revisit possession statutes amid regional reform debate</h2>
-      </li>
-    </ul>
-  </aside>
+    <aside class="secondary" aria-label="More coverage">
+      <p class="section-rule">Follow the world's cannabis policy shifts</p>
+      <ul>
+        {#each articles.slice(1, 5) as a (a.slug)}
+          <li>
+            <p class="s-kicker">{regionLabel(a.region)}</p>
+            <h2>
+              <!-- rel=external: /articles/[slug]/ lands in Task 3; drop rel then -->
+              <a href="{base}/articles/{a.slug}/" rel="external">{a.title}</a>
+            </h2>
+          </li>
+        {/each}
+      </ul>
+    </aside>
+  {/if}
+</div>
+
+<div class="regions">
+  {#each REGIONS as r (r.slug)}
+    {@const list = articlesByRegion(r.slug).slice(0, 3)}
+    {#if list.length}
+      <section class="region-section" aria-labelledby="region-{r.slug}">
+        <h2 class="region-title" id="region-{r.slug}">
+          <!-- /region/[region]/ is built in THIS task → no rel, safe to crawl -->
+          <a href="{base}/region/{r.slug}/">{r.label}</a>
+        </h2>
+        <div class="cards">
+          {#each list as a (a.slug)}
+            <article class="card">
+              <p class="s-kicker">{regionLabel(a.region)}</p>
+              <h3>
+                <!-- rel=external: /articles/[slug]/ lands in Task 3; drop rel then -->
+                <a href="{base}/articles/{a.slug}/" rel="external">{a.title}</a>
+              </h3>
+              <p class="card-dek">{a.dek}</p>
+              <time class="card-date" datetime={a.date}>{formatDate(a.date)}</time>
+            </article>
+          {/each}
+        </div>
+      </section>
+    {/if}
+  {/each}
 </div>
 
 <style>
@@ -109,6 +136,74 @@
     line-height: 1.2;
     font-weight: 500;
   }
+
+  .regions {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 1rem 1.25rem 2rem;
+  }
+  .region-section {
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid var(--color-border);
+  }
+  .region-title {
+    margin: 0 0 1.25rem;
+    font-size: var(--text-lg);
+    letter-spacing: -0.01em;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .card h3 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: var(--text-md);
+    line-height: 1.2;
+    font-weight: 500;
+  }
+  .card-dek {
+    margin: 0;
+    font-size: var(--text-base);
+    line-height: 1.5;
+    color: var(--color-secondary);
+  }
+  .card-date {
+    font-size: var(--text-sm);
+    color: var(--color-muted-foreground);
+  }
+
+  /* article-card + section links: near-black, accent on hover/focus (Swiss editorial) */
+  h1 a,
+  .secondary h2 a,
+  .card h3 a {
+    color: var(--color-foreground);
+    text-decoration: none;
+  }
+  .region-title a {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+  h1 a:hover,
+  h1 a:focus-visible,
+  .secondary h2 a:hover,
+  .secondary h2 a:focus-visible,
+  .card h3 a:hover,
+  .card h3 a:focus-visible,
+  .region-title a:hover,
+  .region-title a:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    color: var(--color-accent);
+  }
+
   @media (max-width: 720px) {
     .front {
       display: block;
@@ -117,6 +212,10 @@
       border-right: none;
       padding-right: 0;
       margin-bottom: 2rem;
+    }
+    .cards {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
   }
 </style>
