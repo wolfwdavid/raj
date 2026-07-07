@@ -7,7 +7,7 @@
 
 ### Infrastructure & Deploy
 
-- [ ] **INFRA-01**: A visitor can reach all four sites from one GitHub Pages deployment at `wolfwdavid.github.io/raj/<site>/` after a single push to main
+- [x] **INFRA-01**: A visitor can reach all four sites from one GitHub Pages deployment at `wolfwdavid.github.io/raj/<site>/` after a single push to main
 - [ ] **INFRA-02**: A visitor can navigate a hub page at `/raj/` linking to all four sites (relative links)
 - [ ] **INFRA-03**: A visitor hitting an unknown URL gets a styled root 404 page linking to the four sites
 - [ ] **INFRA-04**: Each site builds independently with its own package.json/lockfile (`npm ci && npm run build` succeeds per folder, with and without BASE_PATH)
@@ -83,7 +83,7 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| INFRA-01 | Phase 1 | Pending |
+| INFRA-01 | Phase 1 | Complete |
 | INFRA-02 | Phase 1 | Pending |
 | INFRA-03 | Phase 1 | Pending |
 | INFRA-04 | Phase 2 | Pending |
