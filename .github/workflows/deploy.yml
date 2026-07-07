@@ -58,6 +58,43 @@ jobs:
             exit 1
           fi
           echo "portability guard passed for ${{ matrix.site }}"
+      - name: Content + dynamic-route assertions (INFRA-05/07)   # built HTML has real content; dir/index.html per record == deep-linkable
+        working-directory: ${{ matrix.site }}
+        run: |
+          set -euo pipefail
+          # build/ holds the BASE_PATH (deployed) artifact at this point.
+          # Per site: built dynamic-route file count == data record count (entries() completeness),
+          # plus a real-content grep (no empty shell). One dir/index.html per record is the
+          # structural proof that Pages deep-links + hard-refresh work (trailingSlash='always' + adapter-static).
+          case "${{ matrix.site }}" in
+            vfamigos)
+              exp=$(grep -c 'slug:' src/lib/data/products.ts)
+              act=$(ls build/products/*/index.html | wc -l)
+              test "$exp" -eq "$act" || { echo "::error::vfamigos products: expected $exp pages, built $act (entries() gap)"; exit 1; }
+              grep -rq "add to cart\|Add to Cart\|disabled" build/products/*/index.html || { echo "::error::vfamigos PDP missing real content"; exit 1; }
+              ;;
+            lidentist)
+              exp=$(grep -c 'slug:' src/lib/data/dentists.ts)
+              act=$(ls build/dentists/*/index.html | wc -l)
+              test "$exp" -eq "$act" || { echo "::error::lidentist dentists: expected $exp pages, built $act (entries() gap)"; exit 1; }
+              grep -rq "Sample data for demonstration" build/index.html build/dentists/*/index.html || { echo "::error::lidentist missing FTC sample-data label in built HTML"; exit 1; }
+              grep -rq "out of 5 stars," build/dentists/*/index.html || { echo "::error::lidentist detail missing aria rating"; exit 1; }
+              ;;
+            cannaworldnews)
+              exp=$(ls src/content/articles/*.md | wc -l)
+              act=$(ls build/articles/*/index.html | wc -l)
+              test "$exp" -eq "$act" || { echo "::error::cannaworldnews articles: expected $exp pages, built $act (entries() gap)"; exit 1; }
+              reg=$(ls build/region/*/index.html | wc -l)
+              test "$reg" -eq 4 || { echo "::error::cannaworldnews regions: expected 4, built $reg"; exit 1; }
+              grep -rq "<time datetime=" build/articles/*/index.html || { echo "::error::cannaworldnews article missing <time datetime>"; exit 1; }
+              ;;
+            lipool)
+              test -f build/gallery/index.html || { echo "::error::lipool /gallery/ not prerendered"; exit 1; }
+              grep -rq "HomeAndConstructionBusiness" build/index.html || { echo "::error::lipool missing JSON-LD in built HTML"; exit 1; }
+              grep -rq "aggregateRating" build/index.html && { echo "::error::lipool must NOT emit aggregateRating (no visible reviews)"; exit 1; } || true
+              ;;
+          esac
+          echo "content + dynamic-route assertions passed for ${{ matrix.site }}"
       - uses: actions/upload-artifact@v4       # plain artifact — NOT the Pages-specific uploader
         with:
           name: site-${{ matrix.site }}
