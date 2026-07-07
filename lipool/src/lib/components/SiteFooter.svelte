@@ -40,9 +40,8 @@
       <ul>
         <!-- home services section — {base}-prefixed so it resolves from any page -->
         <li><a href="{base}/#services">Services</a></li>
-        <!-- rel=external: route lands in Phase 3; drop rel then -->
-        <li><a href="{base}/gallery/" rel="external">Gallery</a></li>
-        <!-- rel=external: route lands in Phase 3; drop rel then -->
+        <li><a href="{base}/gallery/">Gallery</a></li>
+        <!-- rel=external: /quote/ is a Phase-4 route; keep the crawler guard until then -->
         <li><a href="{base}/quote/" rel="external">Get a Quote</a></li>
       </ul>
     </nav>

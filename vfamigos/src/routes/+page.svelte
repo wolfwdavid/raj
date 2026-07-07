@@ -12,8 +12,7 @@
       A cast of original collectible characters, each with their own story, series, and
       superpower. Start your collection and bring an Amigo home.
     </p>
-    <!-- rel=external: route lands in Phase 3; drop rel then -->
-    <a class="cta" href="{base}/products/" rel="external">Shop the Amigos</a>
+    <a class="cta" href="{base}/products/">Shop the Amigos</a>
   </div>
 </section>
 

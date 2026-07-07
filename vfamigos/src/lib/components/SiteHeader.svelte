@@ -6,12 +6,10 @@
   <nav aria-label="Primary">
     <a class="brand" href="{base}/">vfamigos</a>
     <ul>
-      <!-- rel=external: route lands in Phase 3; drop rel then -->
-      <li><a class="nav-link" href="{base}/products/" rel="external">Shop</a></li>
-      <!-- rel=external: route lands in Phase 3; drop rel then -->
-      <li><a class="nav-link" href="{base}/about/" rel="external">About</a></li>
+      <li><a class="nav-link" href="{base}/products/">Shop</a></li>
+      <li><a class="nav-link" href="{base}/about/">About</a></li>
       <li>
-        <!-- rel=external: route lands in Phase 3; drop rel then -->
+        <!-- rel=external: /cart/ is a Phase-4 route; keep the crawler guard until then -->
         <a class="cart" href="{base}/cart/" rel="external">
           <svg
             class="icon"

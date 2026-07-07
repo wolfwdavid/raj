@@ -8,8 +8,7 @@
     <ul>
       <!-- home services section — {base}-prefixed so it resolves from any page -->
       <li><a class="nav-link" href="{base}/#services">Services</a></li>
-      <!-- rel=external: route lands in Phase 3; drop rel then -->
-      <li><a class="nav-link" href="{base}/gallery/" rel="external">Gallery</a></li>
+      <li><a class="nav-link" href="{base}/gallery/">Gallery</a></li>
       <li>
         <a class="call" href="tel:+15165550100" aria-label="Call Lipool at (516) 555-0100">
           <svg
@@ -32,7 +31,7 @@
         </a>
       </li>
       <li>
-        <!-- rel=external: route lands in Phase 3; drop rel then -->
+        <!-- rel=external: /quote/ is a Phase-4 route; keep the crawler guard until then -->
         <a class="cta" href="{base}/quote/" rel="external">Get Quote</a>
       </li>
     </ul>

@@ -7,10 +7,8 @@
     <p class="brand-line">vfamigos — collect the Amigos</p>
     <nav aria-label="Footer">
       <ul>
-        <!-- rel=external: route lands in Phase 3; drop rel then -->
-        <li><a href="{base}/products/" rel="external">Shop</a></li>
-        <!-- rel=external: route lands in Phase 3; drop rel then -->
-        <li><a href="{base}/about/" rel="external">About</a></li>
+        <li><a href="{base}/products/">Shop</a></li>
+        <li><a href="{base}/about/">About</a></li>
       </ul>
     </nav>
   </div>
