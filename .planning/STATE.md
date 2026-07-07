@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 03-05-PLAN.md
-last_updated: "2026-07-07T06:16:46.427Z"
+stopped_at: Completed 04-02-PLAN.md
+last_updated: "2026-07-07T06:54:41.059Z"
 progress:
   total_phases: 5
-  completed_phases: 3
-  total_plans: 10
-  completed_plans: 10
+  completed_phases: 4
+  total_plans: 12
+  completed_plans: 12
 ---
 
 # Project State
@@ -19,12 +19,12 @@ progress:
 See: .planning/PROJECT.md (updated 2026-07-06)
 
 **Core value:** Four distinct, production-quality, custom-domain-ready websites ship from one repo with one push — each with a real conversion path that works the moment real service keys are pasted in.
-**Current focus:** Phase 03 — content-dynamic-routes
+**Current focus:** Phase 04 — conversion-paths
 
 ## Current Position
 
-Phase: 4
-Plan: Not started
+Phase: 04 (conversion-paths) — EXECUTING
+Plan: 2 of 2
 
 ## Performance Metrics
 
@@ -56,6 +56,8 @@ Plan: Not started
 | Phase 03 P03 | 12 | 3 tasks | 12 files |
 | Phase 03 P02 | 17 | 3 tasks | 9 files |
 | Phase 03 P05 | 14 | 2 tasks | 6 files |
+| Phase 04 P01 | 7 | 3 tasks | 8 files |
+| Phase 04 P02 | 7 | 2 tasks | 10 files |
 
 ## Accumulated Context
 
@@ -85,6 +87,11 @@ Recent decisions affecting current work:
 - [Phase 03]: lidentist shell fragment nav (#directory/#how) anchored to {base}/#id so it resolves from detail pages without tripping prerender handleMissingId
 - [Phase 03]: CI now enforces INFRA-05/07: per-site deploy.yml step asserts built dir/index.html count == data record count (derived dynamically) + a real-content grep, failing on any entries() gap or empty shell
 - [Phase 03]: Route-lighting complete: rel=external dropped from all now-real Phase-3 routes (vfamigos /products+/about, lipool /gallery); Phase-4 routes (/cart /quote /appointment) stay guarded
+- [Phase 04]: vfamigos cart is a Svelte 5 runes module store (cart.svelte.ts): $state read via getters (reactive), all localStorage behind if(browser), empty init + onMount hydrate() = prerender-safe, no empty-flash
+- [Phase 04]: vfamigos checkout is honest: /cart/ summary+checkout render unconditionally, gated on STRIPE_PAYMENT_LINK (disabled + not-configured note when empty); /thanks/ is the only success surface (prerendered Stripe redirect target). No fake success
+- [Phase 04]: lipool /quote + lidentist /appointment share a duplicated native-POST LeadForm (method=POST action=FORM_ENDPOINT) with fetch progressive enhancement; identical submit logic so a diff catches drift
+- [Phase 04]: Honeypot _gotcha is off-screen via position:absolute (never display:none), aria-hidden + tabindex=-1; FORM_ENDPOINT empty => visible not-configured note, never a fake success (asserted in built-HTML greps)
+- [Phase 04]: lidentist /appointment reads ?dentist= client-side in an $effect to pre-select the dentist so the route prerenders with no query
 
 ### Pending Todos
 
@@ -99,6 +106,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-07-07T06:05:37.180Z
-Stopped at: Completed 03-05-PLAN.md
+Last session: 2026-07-07T06:54:18.874Z
+Stopped at: Completed 04-02-PLAN.md
 Resume file: None

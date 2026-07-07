@@ -19,16 +19,16 @@
 
 - [x] **VFAM-01**: A shopper can browse a product grid of original Amigo characters (name, series, price, per-character art) on the home page
 - [x] **VFAM-02**: A shopper can open a product page per character with story/bio, traits, price, and add-to-cart (`/products/[slug]/`)
-- [ ] **VFAM-03**: A shopper can add/remove items and change quantities in a cart that persists across page reloads (runes store + localStorage)
-- [ ] **VFAM-04**: A shopper can proceed to checkout via a Stripe Payment Link anchor from config.ts (placeholder URL, real-ready; disabled-with-notice state when placeholder)
-- [ ] **VFAM-05**: A shopper returning from Stripe lands on a prerendered `/thanks/` page (the only success state — nothing simulated in-app)
+- [x] **VFAM-03**: A shopper can add/remove items and change quantities in a cart that persists across page reloads (runes store + localStorage)
+- [x] **VFAM-04**: A shopper can proceed to checkout via a Stripe Payment Link anchor from config.ts (placeholder URL, real-ready; disabled-with-notice state when placeholder)
+- [x] **VFAM-05**: A shopper returning from Stripe lands on a prerendered `/thanks/` page (the only success state — nothing simulated in-app)
 - [x] **VFAM-06**: A shopper sees brand storytelling (hero + about section) consistent with the vfamigos design system
 
 ### Lipool (pool contractor lead-gen)
 
 - [x] **POOL-01**: A homeowner sees services, benefit-led hero, and Long Island trust signals (licensed/insured, years, Nassau & Suffolk service areas) on the home page
 - [x] **POOL-02**: A homeowner can view a project gallery page with descriptive alt text
-- [ ] **POOL-03**: A homeowner can submit a quote request form (≤5 fields, honeypot, visible labels, inline errors) that POSTs to a configurable FORM_ENDPOINT and shows real success/error states only
+- [x] **POOL-03**: A homeowner can submit a quote request form (≤5 fields, honeypot, visible labels, inline errors) that POSTs to a configurable FORM_ENDPOINT and shows real success/error states only
 - [x] **POOL-04**: A homeowner can tap a click-to-call phone link present on every page
 - [x] **POOL-05**: The site emits HomeAndConstructionBusiness JSON-LD with areaServed and consistent NAP in the footer (no aggregateRating without visible reviews)
 
@@ -37,7 +37,7 @@
 - [x] **DENT-01**: A patient can browse a directory of Long Island dentists (cards: name, practice, town, specialty, star rating + review count)
 - [x] **DENT-02**: A patient can filter the directory by specialty and town (client-side over typed static data, results count announced accessibly)
 - [x] **DENT-03**: A patient can open a dentist detail page (`/dentists/[slug]/`) with on-page review cards (stars + numeric value + text)
-- [ ] **DENT-04**: A patient can request an appointment via a form (dentist pre-selectable) posting to the configurable FORM_ENDPOINT with real states only
+- [x] **DENT-04**: A patient can request an appointment via a form (dentist pre-selectable) posting to the configurable FORM_ENDPOINT with real states only
 - [x] **DENT-05**: All seeded dentists/reviews are unmistakably labeled as sample data (FTC Reviews Rule compliance gate — launch blocker)
 - [x] **DENT-06**: The site meets its accessibility-exemplar bar: skip link, landmarks, aria-labeled ratings, 3px focus rings, 44px targets
 
@@ -108,11 +108,11 @@
 | NEWS-01 | Phase 3 | Complete |
 | NEWS-02 | Phase 3 | Complete |
 | NEWS-03 | Phase 3 | Complete |
-| VFAM-03 | Phase 4 | Pending |
-| VFAM-04 | Phase 4 | Pending |
-| VFAM-05 | Phase 4 | Pending |
-| POOL-03 | Phase 4 | Pending |
-| DENT-04 | Phase 4 | Pending |
+| VFAM-03 | Phase 4 | Complete |
+| VFAM-04 | Phase 4 | Complete |
+| VFAM-05 | Phase 4 | Complete |
+| POOL-03 | Phase 4 | Complete |
+| DENT-04 | Phase 4 | Complete |
 | NEWS-04 | Phase 5 | Pending |
 | NEWS-05 | Phase 5 | Pending |
 | QUAL-04 | Phase 5 | Pending |
