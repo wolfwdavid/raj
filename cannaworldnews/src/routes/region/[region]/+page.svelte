@@ -21,8 +21,7 @@
         <article class="river-item">
           <time class="river-date" datetime={a.date}>{formatDate(a.date)}</time>
           <h2>
-            <!-- rel=external: /articles/[slug]/ lands in Task 3; drop rel then -->
-            <a href="{base}/articles/{a.slug}/" rel="external">{a.title}</a>
+            <a href="{base}/articles/{a.slug}/">{a.title}</a>
           </h2>
           <p class="river-dek">{a.dek}</p>
           <p class="river-byline">{a.author}</p>

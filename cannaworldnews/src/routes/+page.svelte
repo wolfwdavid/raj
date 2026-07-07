@@ -11,8 +11,7 @@
     <article class="lead" aria-labelledby="lead-title">
       <p class="kicker">{regionLabel(lead.region)}</p>
       <h1 id="lead-title">
-        <!-- rel=external: /articles/[slug]/ lands in Task 3; drop rel then -->
-        <a href="{base}/articles/{lead.slug}/" rel="external">{lead.title}</a>
+        <a href="{base}/articles/{lead.slug}/">{lead.title}</a>
       </h1>
       <p class="dek">{lead.dek}</p>
       <p class="byline">
@@ -29,8 +28,7 @@
           <li>
             <p class="s-kicker">{regionLabel(a.region)}</p>
             <h2>
-              <!-- rel=external: /articles/[slug]/ lands in Task 3; drop rel then -->
-              <a href="{base}/articles/{a.slug}/" rel="external">{a.title}</a>
+              <a href="{base}/articles/{a.slug}/">{a.title}</a>
             </h2>
           </li>
         {/each}
@@ -53,8 +51,7 @@
             <article class="card">
               <p class="s-kicker">{regionLabel(a.region)}</p>
               <h3>
-                <!-- rel=external: /articles/[slug]/ lands in Task 3; drop rel then -->
-                <a href="{base}/articles/{a.slug}/" rel="external">{a.title}</a>
+                <a href="{base}/articles/{a.slug}/">{a.title}</a>
               </h3>
               <p class="card-dek">{a.dek}</p>
               <time class="card-date" datetime={a.date}>{formatDate(a.date)}</time>
