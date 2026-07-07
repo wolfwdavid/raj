@@ -17,10 +17,7 @@
 </script>
 
 <article class="card">
-  <!-- TEMP rel="external": /dentists/[slug]/ lands in Task 3, which strips this rel.
-       Without it the prerender crawler would follow this link into a not-yet-built
-       route and fail the Task-2 build. -->
-  <a class="card-link" href="{base}/dentists/{dentist.slug}/" rel="external">
+  <a class="card-link" href="{base}/dentists/{dentist.slug}/">
     <span class="avatar" aria-hidden="true">{initials}</span>
     <span class="body">
       <span class="name">{dentist.name}</span>

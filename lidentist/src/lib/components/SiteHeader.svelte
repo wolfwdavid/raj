@@ -18,8 +18,8 @@
       <span class="brand-text">Lidentist</span>
     </a>
     <ul>
-      <li><a href="#directory">Find a Dentist</a></li>
-      <li><a href="#how">How it Works</a></li>
+      <li><a href="{base}/#directory">Find a Dentist</a></li>
+      <li><a href="{base}/#how">How it Works</a></li>
       <li>
         <!-- rel=external: route lands in Phase 3; drop rel then -->
         <a class="cta" href="{base}/appointment/" rel="external">

@@ -8,8 +8,8 @@
 
     <nav aria-label="Footer">
       <ul>
-        <li><a href="#directory">Find a Dentist</a></li>
-        <li><a href="#how">How it Works</a></li>
+        <li><a href="{base}/#directory">Find a Dentist</a></li>
+        <li><a href="{base}/#how">How it Works</a></li>
         <!-- rel=external: route lands in Phase 3; drop rel then -->
         <li><a href="{base}/appointment/" rel="external">Request an appointment</a></li>
       </ul>
