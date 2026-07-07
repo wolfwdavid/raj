@@ -83,13 +83,45 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| (populated during roadmap creation) | | |
+| INFRA-01 | Phase 1 | Pending |
+| INFRA-02 | Phase 1 | Pending |
+| INFRA-03 | Phase 1 | Pending |
+| INFRA-04 | Phase 2 | Pending |
+| INFRA-06 | Phase 2 | Pending |
+| QUAL-01 | Phase 2 | Pending |
+| QUAL-02 | Phase 2 | Pending |
+| QUAL-03 | Phase 2 | Pending |
+| INFRA-05 | Phase 3 | Pending |
+| INFRA-07 | Phase 3 | Pending |
+| VFAM-01 | Phase 3 | Pending |
+| VFAM-02 | Phase 3 | Pending |
+| VFAM-06 | Phase 3 | Pending |
+| POOL-01 | Phase 3 | Pending |
+| POOL-02 | Phase 3 | Pending |
+| POOL-04 | Phase 3 | Pending |
+| POOL-05 | Phase 3 | Pending |
+| DENT-01 | Phase 3 | Pending |
+| DENT-02 | Phase 3 | Pending |
+| DENT-03 | Phase 3 | Pending |
+| DENT-05 | Phase 3 | Pending |
+| DENT-06 | Phase 3 | Pending |
+| NEWS-01 | Phase 3 | Pending |
+| NEWS-02 | Phase 3 | Pending |
+| NEWS-03 | Phase 3 | Pending |
+| VFAM-03 | Phase 4 | Pending |
+| VFAM-04 | Phase 4 | Pending |
+| VFAM-05 | Phase 4 | Pending |
+| POOL-03 | Phase 4 | Pending |
+| DENT-04 | Phase 4 | Pending |
+| NEWS-04 | Phase 5 | Pending |
+| NEWS-05 | Phase 5 | Pending |
+| QUAL-04 | Phase 5 | Pending |
 
 **Coverage:**
-- v1 requirements: 28 total
-- Mapped to phases: 0
-- Unmapped: 28 ⚠️
+- v1 requirements: 33 total (note: prior footer said 28 — corrected after enumerating INFRA×7, VFAM×6, POOL×5, DENT×6, NEWS×5, QUAL×4)
+- Mapped to phases: 33
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-07-06*
-*Last updated: 2026-07-06 after initial definition*
+*Last updated: 2026-07-06 after roadmap creation (traceability populated, count corrected 28→33)*
