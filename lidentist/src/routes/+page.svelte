@@ -1,9 +1,24 @@
 <script lang="ts">
   import { base } from '$app/paths';
+  import { dentists, SPECIALTIES } from '$lib/data/dentists';
+  import DentistCard from '$lib/components/DentistCard.svelte';
+  import SampleDataBanner from '$lib/components/SampleDataBanner.svelte';
 
-  // Specialty chips shown in the hero (client-side filter of static data lands in Phase 3 / DENT-01).
-  const specialties = ['General', 'Pediatric', 'Orthodontics', 'Cosmetic', 'Oral Surgery'];
+  const towns = [...new Set(dentists.map((d) => d.town))].sort();
+
+  let selectedSpecialty = $state('All');
+  let selectedTown = $state('All');
+
+  const filtered = $derived(
+    dentists.filter(
+      (d) =>
+        (selectedSpecialty === 'All' || d.specialty === selectedSpecialty) &&
+        (selectedTown === 'All' || d.town === selectedTown)
+    )
+  );
 </script>
+
+<SampleDataBanner />
 
 <section class="hero" aria-labelledby="hero-title">
   <div class="hero-inner">
@@ -22,7 +37,7 @@
     </a>
 
     <ul class="chips" aria-label="Browse by specialty">
-      {#each specialties as s}
+      {#each SPECIALTIES as s (s)}
         <li><a href="#directory">{s}</a></li>
       {/each}
     </ul>
@@ -32,11 +47,46 @@
 <section id="directory" class="panel" aria-labelledby="directory-title">
   <div class="panel-inner">
     <h2 id="directory-title">Long Island Dentists</h2>
-    <p>
-      A searchable directory of local practices with specialty tags, town, and patient ratings is
-      coming next. Each listing will include a numeric star rating and review count alongside the
-      stars — never color alone.
+    <p class="directory-lead">
+      Filter by specialty and town. Every listing shows a numeric star rating and review count
+      alongside the stars — never color alone.
     </p>
+
+    <div class="filters">
+      <div class="field">
+        <label for="filter-specialty">Specialty</label>
+        <select id="filter-specialty" bind:value={selectedSpecialty}>
+          <option value="All">All specialties</option>
+          {#each SPECIALTIES as s (s)}
+            <option value={s}>{s}</option>
+          {/each}
+        </select>
+      </div>
+      <div class="field">
+        <label for="filter-town">Town</label>
+        <select id="filter-town" bind:value={selectedTown}>
+          <option value="All">All towns</option>
+          {#each towns as t (t)}
+            <option value={t}>{t}</option>
+          {/each}
+        </select>
+      </div>
+    </div>
+
+    <p class="results-count" aria-live="polite" role="status">
+      {filtered.length}
+      {filtered.length === 1 ? 'dentist' : 'dentists'}
+    </p>
+
+    {#if filtered.length > 0}
+      <ul class="grid">
+        {#each filtered as d (d.slug)}
+          <li><DentistCard dentist={d} /></li>
+        {/each}
+      </ul>
+    {:else}
+      <p class="empty">No dentists match those filters. Try widening your search.</p>
+    {/if}
   </div>
 </section>
 
@@ -121,6 +171,55 @@
   }
   .chips a:hover {
     background: var(--color-muted);
+  }
+  .directory-lead {
+    margin: 0 0 1.5rem;
+  }
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    min-width: 220px;
+  }
+  .field label {
+    font-weight: 600;
+    font-size: var(--text-base);
+    color: var(--color-foreground);
+  }
+  .field select {
+    min-height: 48px;
+    padding: 0 0.9rem;
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--color-foreground);
+    background: var(--color-surface);
+    border: 2px solid var(--color-border);
+    border-radius: 10px;
+  }
+  .results-count {
+    margin: 0 0 1.25rem;
+    font-weight: 600;
+    font-size: var(--text-md);
+    color: var(--color-foreground);
+  }
+  .grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+  .empty {
+    margin: 0;
+    font-size: var(--text-md);
+    color: var(--color-muted-foreground);
   }
   .panel.muted {
     background: var(--color-muted);
