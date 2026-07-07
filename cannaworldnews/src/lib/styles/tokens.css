@@ -1,0 +1,29 @@
+:root {
+  /* palette — verbatim from .planning/design/cannaworldnews.md (editorial black-and-paper) */
+  --color-primary: #18181B;
+  --color-on-primary: #FFFFFF;
+  --color-secondary: #3F3F46;
+  --color-accent: #15803D;
+  --color-background: #FAFAFA;
+  --color-surface: #FFFFFF;
+  --color-foreground: #09090B;
+  --color-muted: #E8ECF0;
+  --color-muted-foreground: #52525B;
+  --color-border: #E4E4E7;
+  --color-destructive: #DC2626;
+  --color-ring: #18181B;
+
+  /* fonts — families must match the app.html <link> */
+  --font-heading: 'Libre Bodoni', Georgia, serif;
+  --font-body: 'Public Sans', system-ui, sans-serif;
+
+  /* type scale — 14/16/17/21/28/40/56 (lead headline); article body 17px, line-height 1.7 */
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-body: 1.0625rem;
+  --text-md: 1.3125rem;
+  --text-lg: 1.75rem;
+  --text-xl: 2.5rem;
+  --text-lead: 3.5rem;
+  --line-body: 1.7;
+}
