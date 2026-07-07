@@ -1,13 +1,35 @@
 <script lang="ts">
   import { base } from '$app/paths';
+
+  // HomeAndConstructionBusiness structured data for local SEO (POOL-05).
+  // Deliberately NO aggregateRating/review — there are no visible on-page reviews,
+  // and marking up a rating without them trips Google's spammy-structured-data filter.
+  // Every value below matches the visible NAP block 1:1.
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'HomeAndConstructionBusiness',
+    name: 'Lipool',
+    telephone: '+1-516-555-0100',
+    areaServed: ['Nassau County', 'Suffolk County'],
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '120 Sunrise Highway',
+      addressLocality: 'Massapequa',
+      addressRegion: 'NY',
+      postalCode: '11758',
+      addressCountry: 'US'
+    }
+  };
 </script>
 
 <footer>
-  <!-- JSON-LD: Phase 3 -->
   <div class="inner">
     <div class="nap">
       <p class="brand-line">Lipool — Long Island's Pool People</p>
-      <p class="area">Serving Nassau &amp; Suffolk County</p>
+      <address class="nap-address">
+        120 Sunrise Highway, Massapequa, NY 11758
+      </address>
+      <p class="area">Serving Nassau County &amp; Suffolk County</p>
       <p>
         <a class="call" href="tel:+15165550100" aria-label="Call Lipool at (516) 555-0100"
           >(516) 555-0100</a
@@ -26,6 +48,9 @@
     </nav>
   </div>
 </footer>
+
+<!-- eslint-disable-next-line svelte/no-at-html-tags -- trusted, build-time JSON-LD only -->
+{@html `<script type="application/ld+json">${JSON.stringify(jsonLd)}</` + `script>`}
 
 <style>
   footer {
@@ -47,6 +72,12 @@
     font-family: var(--font-heading);
     font-weight: 600;
     color: var(--color-foreground);
+    margin: 0 0 0.25rem;
+  }
+  .nap-address {
+    display: block;
+    font-style: normal;
+    color: var(--color-muted-foreground);
     margin: 0 0 0.25rem;
   }
   .area {
