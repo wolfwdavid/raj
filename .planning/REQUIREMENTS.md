@@ -11,9 +11,9 @@
 - [x] **INFRA-02**: A visitor can navigate a hub page at `/raj/` linking to all four sites (relative links)
 - [x] **INFRA-03**: A visitor hitting an unknown URL gets a styled root 404 page linking to the four sites
 - [x] **INFRA-04**: Each site builds independently with its own package.json/lockfile (`npm ci && npm run build` succeeds per folder, with and without BASE_PATH)
-- [ ] **INFRA-05**: Every page of every site is fully prerendered — real content visible in built HTML source (prerender=true, trailingSlash='always', explicit entries() for all dynamic routes)
+- [x] **INFRA-05**: Every page of every site is fully prerendered — real content visible in built HTML source (prerender=true, trailingSlash='always', explicit entries() for all dynamic routes)
 - [x] **INFRA-06**: CI fails if any built HTML contains hardcoded `/raj/` outside BASE_PATH-derived URLs or root-absolute asset paths (portability guard)
-- [ ] **INFRA-07**: Deep links and hard refresh work on every prerendered route served by Pages (dir/index.html emitted per route)
+- [x] **INFRA-07**: Deep links and hard refresh work on every prerendered route served by Pages (dir/index.html emitted per route)
 
 ### Vfamigos (collectibles e-commerce)
 
@@ -91,8 +91,8 @@
 | QUAL-01 | Phase 2 | Complete |
 | QUAL-02 | Phase 2 | Complete |
 | QUAL-03 | Phase 2 | Complete |
-| INFRA-05 | Phase 3 | Pending |
-| INFRA-07 | Phase 3 | Pending |
+| INFRA-05 | Phase 3 | Complete |
+| INFRA-07 | Phase 3 | Complete |
 | VFAM-01 | Phase 3 | Complete |
 | VFAM-02 | Phase 3 | Complete |
 | VFAM-06 | Phase 3 | Complete |

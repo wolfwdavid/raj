@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 03-02-PLAN.md
-last_updated: "2026-07-07T05:57:04.164Z"
+stopped_at: Completed 03-05-PLAN.md
+last_updated: "2026-07-07T06:05:52.599Z"
 progress:
   total_phases: 5
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 10
-  completed_plans: 9
+  completed_plans: 10
 ---
 
 # Project State
@@ -24,7 +24,7 @@ See: .planning/PROJECT.md (updated 2026-07-06)
 ## Current Position
 
 Phase: 03 (content-dynamic-routes) — EXECUTING
-Plan: 4 of 5
+Plan: 5 of 5
 
 ## Performance Metrics
 
@@ -55,6 +55,7 @@ Plan: 4 of 5
 | Phase 03 P04 | 10 | 3 tasks | 6 files |
 | Phase 03 P03 | 12 | 3 tasks | 12 files |
 | Phase 03 P02 | 17 | 3 tasks | 9 files |
+| Phase 03 P05 | 14 | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -82,6 +83,8 @@ Recent decisions affecting current work:
 - [Phase 03]: lidentist: dynamic route entries() derived from typed dentists.ts; built page count == record count (10==10) enforces prerender completeness
 - [Phase 03]: lidentist: FTC sample-data banner is a full-width warning band on directory AND every detail page (launch gate DENT-05), not a footer note
 - [Phase 03]: lidentist shell fragment nav (#directory/#how) anchored to {base}/#id so it resolves from detail pages without tripping prerender handleMissingId
+- [Phase 03]: CI now enforces INFRA-05/07: per-site deploy.yml step asserts built dir/index.html count == data record count (derived dynamically) + a real-content grep, failing on any entries() gap or empty shell
+- [Phase 03]: Route-lighting complete: rel=external dropped from all now-real Phase-3 routes (vfamigos /products+/about, lipool /gallery); Phase-4 routes (/cart /quote /appointment) stay guarded
 
 ### Pending Todos
 
@@ -96,6 +99,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-07-07T05:56:42.698Z
-Stopped at: Completed 03-02-PLAN.md
+Last session: 2026-07-07T06:05:37.180Z
+Stopped at: Completed 03-05-PLAN.md
 Resume file: None

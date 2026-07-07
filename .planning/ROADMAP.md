@@ -68,7 +68,7 @@ Plans (Wave 1 = 03-01..03-04 run in parallel; Wave 2 = 03-05 depends on all four
 - [x] 03-02-PLAN.md — lidentist: dentists.ts + filterable directory + /dentists/[slug]/ detail + review cards + FTC sample-data banner + a11y-exemplar bar (Wave 1)
 - [x] 03-03-PLAN.md — cannaworldnews: marked+gray-matter pipeline + 12+ markdown articles + front page + /articles/[slug]/ + /region/[region]/ (Wave 1)
 - [x] 03-04-PLAN.md — lipool: services + LI trust strip + /gallery/ + click-to-call + HomeAndConstructionBusiness JSON-LD/NAP (no aggregateRating) (Wave 1)
-- [ ] 03-05-PLAN.md — cross-cutting: drop stale rel=external on now-real routes + CI content-in-HTML + dynamic-route file-count/deep-link assertions (Wave 2)
+- [x] 03-05-PLAN.md — cross-cutting: drop stale rel=external on now-real routes + CI content-in-HTML + dynamic-route file-count/deep-link assertions (Wave 2)
 
 ### Phase 4: Conversion Paths
 **Goal**: Wire each site's real outbound conversion path so it works the moment real keys are pasted — with no fake success states anywhere.
