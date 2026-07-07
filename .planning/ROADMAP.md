@@ -33,7 +33,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 Plans:
 - [x] 01-01-PLAN.md — deploy.yml: matrix build (fail-fast:false) → assemble _site → single deploy; download-artifact@v4 un-nesting + 4×index.html assertion; first-enable handling; committed live smoke script
-- [ ] 01-02-PLAN.md — four minimal SvelteKit placeholder apps (committed lockfiles, prerender contract, BASE_PATH-driven base) + committed pages-root/ hub index + shared 404.html + .nojekyll
+- [x] 01-02-PLAN.md — four minimal SvelteKit placeholder apps (committed lockfiles, prerender contract, BASE_PATH-driven base) + committed pages-root/ hub index + shared 404.html + .nojekyll
 
 ### Phase 2: Per-Site Shells + Scaffold Conventions
 **Goal**: Establish the layout/base-path/prerender conventions once and stand up four independent SvelteKit shells, each in its committed design system, so later site work is parallel and pitfall-free.

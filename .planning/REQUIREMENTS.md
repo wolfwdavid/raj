@@ -8,8 +8,8 @@
 ### Infrastructure & Deploy
 
 - [x] **INFRA-01**: A visitor can reach all four sites from one GitHub Pages deployment at `wolfwdavid.github.io/raj/<site>/` after a single push to main
-- [ ] **INFRA-02**: A visitor can navigate a hub page at `/raj/` linking to all four sites (relative links)
-- [ ] **INFRA-03**: A visitor hitting an unknown URL gets a styled root 404 page linking to the four sites
+- [x] **INFRA-02**: A visitor can navigate a hub page at `/raj/` linking to all four sites (relative links)
+- [x] **INFRA-03**: A visitor hitting an unknown URL gets a styled root 404 page linking to the four sites
 - [ ] **INFRA-04**: Each site builds independently with its own package.json/lockfile (`npm ci && npm run build` succeeds per folder, with and without BASE_PATH)
 - [ ] **INFRA-05**: Every page of every site is fully prerendered — real content visible in built HTML source (prerender=true, trailingSlash='always', explicit entries() for all dynamic routes)
 - [ ] **INFRA-06**: CI fails if any built HTML contains hardcoded `/raj/` outside BASE_PATH-derived URLs or root-absolute asset paths (portability guard)
@@ -84,8 +84,8 @@
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | INFRA-01 | Phase 1 | Complete |
-| INFRA-02 | Phase 1 | Pending |
-| INFRA-03 | Phase 1 | Pending |
+| INFRA-02 | Phase 1 | Complete |
+| INFRA-03 | Phase 1 | Complete |
 | INFRA-04 | Phase 2 | Pending |
 | INFRA-06 | Phase 2 | Pending |
 | QUAL-01 | Phase 2 | Pending |
