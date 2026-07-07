@@ -95,6 +95,48 @@ jobs:
               ;;
           esac
           echo "content + dynamic-route assertions passed for ${{ matrix.site }}"
+      - name: Compliance gate (D-06) — SEO meta + no-fake-success + disclaimer/FTC/no-aggregateRating
+        working-directory: ${{ matrix.site }}
+        run: |
+          set -euo pipefail
+          # build/ holds the BASE_PATH (deployed) artifact. All four sites run this leg.
+
+          # (1) SITE-WIDE: no fabricated success copy anywhere (extends the Phase-4 negative grep).
+          # vfamigos /thanks/ ("Your order is confirmed.") is the REAL Stripe redirect surface
+          # (VFAM-05) and is deliberately NOT in this pattern.
+          if grep -rniE 'order placed|payment successful|thanks,? we got it|message sent|appointment booked|request received' build --include="*.html"; then
+            echo "::error::${{ matrix.site }}: fabricated success copy in built HTML (no fake success states)"; exit 1
+          fi
+
+          # (2) PER-PAGE SEO: every built index.html has a non-empty <title>, a non-empty meta
+          # description, and an absolute SITE_URL-derived canonical (https://, never root-absolute).
+          while IFS= read -r f; do
+            grep -Eq '<title>[^<]+</title>' "$f" || { echo "::error::$f: missing non-empty <title>"; exit 1; }
+            grep -Eq 'name="description"[^>]*content="[^"]+"' "$f" || { echo "::error::$f: missing non-empty meta description"; exit 1; }
+            grep -E '<link[^>]*rel="canonical"[^>]*>' "$f" | grep -q 'href="https://' || { echo "::error::$f: missing SITE_URL-derived canonical (https://)"; exit 1; }
+          done < <(find build -name index.html)
+
+          # (3) PER-SITE compliance specifics.
+          case "${{ matrix.site }}" in
+            cannaworldnews)
+              # Informational disclaimer on EVERY page (NEWS-05).
+              while IFS= read -r f; do
+                grep -q "not legal or medical advice" "$f" || { echo "::error::$f: missing cannabis informational disclaimer"; exit 1; }
+              done < <(find build -name index.html)
+              # Article meta (NEWS-04): article:published_time + og:type=article on every article.
+              grep -rq 'property="article:published_time"' build/articles/*/index.html || { echo "::error::cannaworldnews articles missing article:published_time"; exit 1; }
+              grep -rE 'og:type"[^>]*content="article"' build/articles/*/index.html >/dev/null || { echo "::error::cannaworldnews articles missing og:type=article"; exit 1; }
+              ;;
+            lidentist)
+              # FTC sample-data label intact (also enforced in Content step; re-asserted as the compliance gate).
+              grep -rq "Sample data for demonstration" build/index.html build/dentists/*/index.html || { echo "::error::lidentist missing FTC sample-data label"; exit 1; }
+              ;;
+            lipool)
+              # No aggregateRating without visible reviews (also enforced in Content step).
+              if grep -rq "aggregateRating" build --include="*.html"; then echo "::error::lipool must NOT emit aggregateRating"; exit 1; fi
+              ;;
+          esac
+          echo "compliance gate passed for ${{ matrix.site }}"
       - uses: actions/upload-artifact@v4       # plain artifact — NOT the Pages-specific uploader
         with:
           name: site-${{ matrix.site }}
