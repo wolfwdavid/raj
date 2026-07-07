@@ -10,8 +10,7 @@
       <li><a class="nav-link" href="{base}/products/">Shop</a></li>
       <li><a class="nav-link" href="{base}/about/">About</a></li>
       <li>
-        <!-- rel=external: /cart/ is a Phase-4 route; keep the crawler guard until then -->
-        <a class="cart" href="{base}/cart/" rel="external">
+        <a class="cart" href="{base}/cart/">
           <svg
             class="icon"
             width="24"
