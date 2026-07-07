@@ -1,8 +1,15 @@
 <script lang="ts">
   import { base } from '$app/paths';
   import ProductCard from '$lib/components/ProductCard.svelte';
+  import Seo from '$lib/components/Seo.svelte';
   import { products } from '$lib/data/products';
 </script>
+
+<Seo
+  title="Vfamigos — Original Collectible Amigo Characters"
+  description="Meet the Amigos: a cast of original collectible characters, each with their own story, series, and superpower. Start your collection."
+  path="/"
+/>
 
 <section class="hero">
   <div class="blob" aria-hidden="true"></div>

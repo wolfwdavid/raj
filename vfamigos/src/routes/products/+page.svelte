@@ -1,7 +1,14 @@
 <script lang="ts">
   import ProductCard from '$lib/components/ProductCard.svelte';
+  import Seo from '$lib/components/Seo.svelte';
   import { products } from '$lib/data/products';
 </script>
+
+<Seo
+  title="Shop All Amigos — Vfamigos"
+  description="Browse the full collection of original Amigo collectible characters — pick the personality that speaks to you."
+  path="/products/"
+/>
 
 <section class="shop">
   <div class="section-inner">

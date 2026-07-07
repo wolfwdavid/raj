@@ -1,6 +1,13 @@
 <script lang="ts">
   import { base } from '$app/paths';
+  import Seo from '$lib/components/Seo.svelte';
 </script>
+
+<Seo
+  title="Our Story — Vfamigos"
+  description="Why the Amigos? Every character is an original, built to carry a little courage, kindness, or curiosity — no borrowed faces."
+  path="/about/"
+/>
 
 <section class="about">
   <div class="section-inner">

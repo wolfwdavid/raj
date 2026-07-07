@@ -2,6 +2,7 @@
   import { base } from '$app/paths';
   import { onMount } from 'svelte';
   import { cart } from '$lib/cart.svelte';
+  import Seo from '$lib/components/Seo.svelte';
   // /thanks/ is the Stripe Payment Link's dashboard-configured post-payment redirect.
   // It's a static page — it does NOT read the cart or claim a specific order. Clearing
   // the cart here is browser-guarded (onMount runs client-side only).
@@ -9,6 +10,12 @@
     cart.clear();
   });
 </script>
+
+<Seo
+  title="Thank You — Vfamigos"
+  description="Your order is confirmed. A receipt and confirmation follow by email from Stripe."
+  path="/thanks/"
+/>
 
 <section class="thanks">
   <h1>Thank you!</h1>

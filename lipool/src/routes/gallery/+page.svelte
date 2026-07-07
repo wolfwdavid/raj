@@ -1,6 +1,13 @@
 <script lang="ts">
+  import Seo from '$lib/components/Seo.svelte';
   import { gallery } from '$lib/data/gallery';
 </script>
+
+<Seo
+  title="Project Gallery — Lipool"
+  description="See recent Long Island pool installation, service, and renovation projects across Nassau & Suffolk."
+  path="/gallery/"
+/>
 
 <section class="gallery">
   <div class="gallery-head">

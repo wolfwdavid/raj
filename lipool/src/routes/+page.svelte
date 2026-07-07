@@ -1,7 +1,14 @@
 <script lang="ts">
   import { base } from '$app/paths';
+  import Seo from '$lib/components/Seo.svelte';
   import { services } from '$lib/data/services';
 </script>
+
+<Seo
+  title="Lipool — Long Island Pool Installation, Service & Renovation"
+  description="Free, no-obligation pool quotes across Nassau & Suffolk County. Licensed, insured, and local."
+  path="/"
+/>
 
 <section class="hero">
   <div class="hero-inner">

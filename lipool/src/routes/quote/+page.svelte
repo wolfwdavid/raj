@@ -1,5 +1,6 @@
 <script lang="ts">
   import LeadForm from '$lib/components/LeadForm.svelte';
+  import Seo from '$lib/components/Seo.svelte';
 
   const towns = [
     'Huntington',
@@ -13,13 +14,11 @@
   ];
 </script>
 
-<svelte:head>
-  <title>Get a free pool quote — Lipool</title>
-  <meta
-    name="description"
-    content="Request a free, no-obligation pool quote for installation, service, or renovation across Nassau & Suffolk County."
-  />
-</svelte:head>
+<Seo
+  title="Get a Free Pool Quote — Lipool"
+  description="Request a free, no-obligation pool quote for installation, service, or renovation across Nassau & Suffolk County."
+  path="/quote/"
+/>
 
 <section class="quote">
   <div class="quote-main">

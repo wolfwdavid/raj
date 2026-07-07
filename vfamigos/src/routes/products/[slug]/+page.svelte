@@ -1,12 +1,19 @@
 <script lang="ts">
   import { base } from '$app/paths';
   import { cart } from '$lib/cart.svelte';
+  import Seo from '$lib/components/Seo.svelte';
   import type { PageData } from './$types';
 
   let { data }: { data: PageData } = $props();
   const product = $derived(data.product);
   const initial = $derived(product.name.charAt(0).toUpperCase());
 </script>
+
+<Seo
+  title={`${product.name} — Vfamigos`}
+  description={product.tagline}
+  path={`/products/${product.slug}/`}
+/>
 
 <article class="pdp">
   <a class="back" href="{base}/products/">&larr; Back to all Amigos</a>

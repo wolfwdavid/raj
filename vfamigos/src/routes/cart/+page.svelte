@@ -2,8 +2,15 @@
   import { base } from '$app/paths';
   import { cart } from '$lib/cart.svelte';
   import { STRIPE_PAYMENT_LINK } from '$lib/config';
+  import Seo from '$lib/components/Seo.svelte';
   const configured = $derived(STRIPE_PAYMENT_LINK.length > 0);
 </script>
+
+<Seo
+  title="Your Cart — Vfamigos"
+  description="Review your Amigo collection and check out securely with Stripe."
+  path="/cart/"
+/>
 
 <section class="cart-page">
   <h1>Your cart</h1>
