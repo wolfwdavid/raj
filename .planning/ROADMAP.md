@@ -81,9 +81,9 @@ Plans (Wave 1 = 03-01..03-04 run in parallel; Wave 2 = 03-05 depends on all four
   4. A lidentist patient can request an appointment via a form with the dentist pre-selectable, posting to the configurable FORM_ENDPOINT with real states only.
 **Plans**: 2 plans
 
-Plans:
-- [ ] 04-01: vfamigos runes cart + localStorage (browser-guarded) + Stripe Payment Link + /thanks/
-- [ ] 04-02: Shared LeadForm pattern for lipool quote + lidentist appointment (honeypot, progressive enhancement, config endpoint)
+Plans (Wave 1 = 04-01 and 04-02 run in parallel — disjoint site file sets):
+- [ ] 04-01-PLAN.md — vfamigos: runes cart.svelte.ts + browser-guarded localStorage + reactive badge + wired PDP add + /cart/ + STRIPE_PAYMENT_LINK checkout (disabled-when-placeholder) + prerendered /thanks/ (Wave 1)
+- [ ] 04-02-PLAN.md — shared LeadForm for lipool /quote/ + lidentist /appointment/ (?dentist= pre-select): FORM_ENDPOINT config, native POST + fetch progressive enhancement, off-screen honeypot, real states only (Wave 1)
 
 ### Phase 5: SEO Hardening + Compliance Gate
 **Goal**: Make every site custom-domain-ready with correct SITE_URL-driven metadata and clear the compliance blockers before any cutover.
@@ -110,5 +110,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 1. Deploy Pipeline | 0/2 | Not started | - |
 | 2. Per-Site Shells | 0/3 | Not started | - |
 | 3. Content + Routes | 3/5 | In Progress|  |
-| 4. Conversion Paths | 0/2 | Not started | - |
+| 4. Conversion Paths | 0/2 | Planned | - |
 | 5. SEO + Compliance | 0/2 | Not started | - |
