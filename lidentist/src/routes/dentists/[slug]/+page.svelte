@@ -2,6 +2,7 @@
   import { base } from '$app/paths';
   import StarRating from '$lib/components/StarRating.svelte';
   import SampleDataBanner from '$lib/components/SampleDataBanner.svelte';
+  import Seo from '$lib/components/Seo.svelte';
 
   let { data } = $props();
   const dentist = $derived(data.dentist);
@@ -16,6 +17,12 @@
     return `${MONTHS[m - 1]} ${d}, ${y}`;
   }
 </script>
+
+<Seo
+  title={`${dentist.name}, ${dentist.practice} — Lidentist`}
+  description={`${dentist.name} — ${dentist.specialty} dentist in ${dentist.town}, Long Island. Sample data for demonstration.`}
+  path={`/dentists/${dentist.slug}/`}
+/>
 
 <SampleDataBanner />
 

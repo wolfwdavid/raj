@@ -1,6 +1,7 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import LeadForm from '$lib/components/LeadForm.svelte';
+  import Seo from '$lib/components/Seo.svelte';
 
   // ?dentist= is only present client-side (prerender has no query) — read it in an effect
   // so the route still prerenders cleanly and the selection applies after mount.
@@ -10,13 +11,11 @@
   });
 </script>
 
-<svelte:head>
-  <title>Request an appointment — Lidentist</title>
-  <meta
-    name="description"
-    content="Request a dental appointment on Long Island. Choose a dentist or leave it open — the office will reach out to confirm."
-  />
-</svelte:head>
+<Seo
+  title="Request an Appointment — Lidentist"
+  description="Request a dental appointment on Long Island. Choose a dentist or leave it open — the office will reach out to confirm."
+  path="/appointment/"
+/>
 
 <section class="appointment">
   <h1>Request an appointment</h1>

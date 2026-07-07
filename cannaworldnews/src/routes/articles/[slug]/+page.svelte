@@ -1,12 +1,19 @@
 <script lang="ts">
   import { base } from '$app/paths';
   import { regionLabel, formatDate } from '$lib/articles';
+  import Seo from '$lib/components/Seo.svelte';
 
   let { data } = $props();
   const article = $derived(data.article);
   const related = $derived(data.related);
   const region = $derived(regionLabel(article.region));
 </script>
+
+<Seo
+  title={`${article.title} — CannaWorldNews`}
+  description={article.dek || article.title}
+  path={`/articles/${article.slug}/`}
+/>
 
 <article class="article">
   <p class="kicker">{region}</p>

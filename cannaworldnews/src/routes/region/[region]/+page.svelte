@@ -1,9 +1,16 @@
 <script lang="ts">
   import { base } from '$app/paths';
   import { formatDate } from '$lib/articles';
+  import Seo from '$lib/components/Seo.svelte';
 
   let { data } = $props();
 </script>
+
+<Seo
+  title={`${data.label} Cannabis News — CannaWorldNews`}
+  description={`Cannabis policy, regulation, and industry developments across ${data.label}, reported and source-attributed.`}
+  path={`/region/${data.region}/`}
+/>
 
 <div class="region-page">
   <header class="region-masthead">

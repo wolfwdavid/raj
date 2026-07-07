@@ -3,6 +3,7 @@
   import { dentists, SPECIALTIES } from '$lib/data/dentists';
   import DentistCard from '$lib/components/DentistCard.svelte';
   import SampleDataBanner from '$lib/components/SampleDataBanner.svelte';
+  import Seo from '$lib/components/Seo.svelte';
 
   const towns = [...new Set(dentists.map((d) => d.town))].sort();
 
@@ -17,6 +18,12 @@
     )
   );
 </script>
+
+<Seo
+  title="Lidentist — Find a Long Island Dentist"
+  description="Browse and filter Long Island dentists by specialty and town. Sample data for demonstration."
+  path="/"
+/>
 
 <SampleDataBanner />
 

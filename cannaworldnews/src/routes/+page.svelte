@@ -1,10 +1,17 @@
 <script lang="ts">
   import { base } from '$app/paths';
   import { articles, REGIONS, articlesByRegion, regionLabel, formatDate } from '$lib/articles';
+  import Seo from '$lib/components/Seo.svelte';
 
   // Newest article leads the front page. The rest fill per-region rivers below.
   const lead = articles[0];
 </script>
+
+<Seo
+  title="CannaWorldNews — Global Cannabis Policy & Industry News"
+  description="Cannabis policy, science, and industry developments from every region. Informational only — not legal or medical advice."
+  path="/"
+/>
 
 <div class="front">
   {#if lead}
