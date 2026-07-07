@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 02-01-PLAN.md
-last_updated: "2026-07-07T04:28:29.251Z"
+stopped_at: Completed 02-03-PLAN.md
+last_updated: "2026-07-07T04:40:04.494Z"
 progress:
   total_phases: 5
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 5
-  completed_plans: 3
+  completed_plans: 5
 ---
 
 # Project State
@@ -24,7 +24,7 @@ See: .planning/PROJECT.md (updated 2026-07-06)
 ## Current Position
 
 Phase: 02 (per-site-shells-scaffold-conventions) — EXECUTING
-Plan: 2 of 3
+Plan: 3 of 3
 
 ## Performance Metrics
 
@@ -49,6 +49,8 @@ Plan: 2 of 3
 | Phase 01 P01 | 3 | 2 tasks | 2 files |
 | Phase 01-deploy-pipeline-walking-skeleton P02 | 9 | 2 tasks | 51 files |
 | Phase 02 P01 | 5 | 2 tasks | 2 files |
+| Phase 02 P02 | 6 | 2 tasks | 12 files |
+| Phase 02 P03 | 7 | 2 tasks | 12 files |
 
 ## Accumulated Context
 
@@ -66,6 +68,9 @@ Recent decisions affecting current work:
 - [Phase 01-deploy-pipeline-walking-skeleton]: pages-root/404.html carries <base href=/raj/> so relative links resolve from any bad-URL depth; hub index.html has no base tag (only ever served at /raj/)
 - [Phase 02]: Portability guard greps built-HTML attribute values (href=/src=), not raw /raj/ — ignores the base-derived hydration assets: JSON and the Phase-1 placeholder comment while still failing on root-absolute leaks (INFRA-06)
 - [Phase 02]: Deployed BASE_PATH build runs last of the two CI builds so build/ holds the base-correct artifact; empty-BASE_PATH build proves custom-domain readiness (INFRA-04)
+- [Phase 02]: vfamigos shell ships rose #E11D48 + Fredoka/Nunito with a blue #2563EB Shop the Amigos CTA; lipool ships water-blue #0284C7 + Poppins/Open Sans with a Get a Free Quote CTA and placeholder click-to-call
+- [Phase 02]: lidentist built as the fleet a11y exemplar: skip-link, strict h1->h2, 3px focus ring, 44px targets, sample-data integrity note
+- [Phase 02]: cannaworldnews region nav (americas/europe/africa/asia-pacific) guarded rel=external until Phase-3 routes exist; green accent limited to kickers/links/rules
 
 ### Pending Todos
 
@@ -80,6 +85,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-07-07T04:28:04.944Z
-Stopped at: Completed 02-01-PLAN.md
+Last session: 2026-07-07T04:40:04.488Z
+Stopped at: Completed 02-03-PLAN.md
 Resume file: None

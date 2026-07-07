@@ -48,8 +48,8 @@ Plans:
 
 Plans:
 - [x] 02-01-PLAN.md — Shared scaffold conventions: extend deploy.yml build leg with svelte-check gate + empty-BASE_PATH build + built-HTML portability grep (root-absolute href/src); author 02-CONVENTIONS.md shell exemplar (tokens.css, app.html fonts, SiteHeader/SiteFooter/+layout skeleton, rel=external prerender-safe nav rule, a11y checklist)
-- [ ] 02-02-PLAN.md — vfamigos + lipool branded shells (design tokens, fonts, nav/footer, real hero, a11y baseline)
-- [ ] 02-03-PLAN.md — lidentist + cannaworldnews branded shells (design tokens, fonts, nav/masthead + footer, real hero, a11y baseline; lidentist = a11y exemplar)
+- [x] 02-02-PLAN.md — vfamigos + lipool branded shells (design tokens, fonts, nav/footer, real hero, a11y baseline)
+- [x] 02-03-PLAN.md — lidentist + cannaworldnews branded shells (design tokens, fonts, nav/masthead + footer, real hero, a11y baseline; lidentist = a11y exemplar)
 
 ### Phase 3: Content + Dynamic Routes
 **Goal**: Give every site its real, typed content across all static and dynamic routes, fully prerendered with real content in the built HTML.

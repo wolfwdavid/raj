@@ -51,9 +51,9 @@
 
 ### Cross-cutting Quality
 
-- [ ] **QUAL-01**: Each site implements its committed design system (.planning/design/<site>.md): palette tokens, font pairing, layout patterns — four visually distinct sites
+- [x] **QUAL-01**: Each site implements its committed design system (.planning/design/<site>.md): palette tokens, font pairing, layout patterns — four visually distinct sites
 - [x] **QUAL-02**: Every site passes `npm run check` (svelte-check) with zero errors
-- [ ] **QUAL-03**: Every page meets baseline a11y: 4.5:1 text contrast, visible focus states, SVG icons (no emoji icons), semantic headings, reduced-motion respected
+- [x] **QUAL-03**: Every page meets baseline a11y: 4.5:1 text contrast, visible focus states, SVG icons (no emoji icons), semantic headings, reduced-motion respected
 - [ ] **QUAL-04**: Every site has per-page titles + meta descriptions; canonical/OG URLs derive from a configurable SITE_URL (never BASE_PATH)
 
 ## v2 Requirements
@@ -88,9 +88,9 @@
 | INFRA-03 | Phase 1 | Complete |
 | INFRA-04 | Phase 2 | Complete |
 | INFRA-06 | Phase 2 | Complete |
-| QUAL-01 | Phase 2 | Pending |
+| QUAL-01 | Phase 2 | Complete |
 | QUAL-02 | Phase 2 | Complete |
-| QUAL-03 | Phase 2 | Pending |
+| QUAL-03 | Phase 2 | Complete |
 | INFRA-05 | Phase 3 | Pending |
 | INFRA-07 | Phase 3 | Pending |
 | VFAM-01 | Phase 3 | Pending |
