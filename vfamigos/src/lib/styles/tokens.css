@@ -1,0 +1,19 @@
+:root {
+  /* palette — verbatim from .planning/design/vfamigos.md */
+  --color-primary: #E11D48;
+  --color-on-primary: #FFFFFF;
+  --color-secondary: #FB7185;
+  --color-accent: #2563EB;
+  --color-background: #FFF1F2;
+  --color-surface: #FFFFFF;
+  --color-foreground: #881337;
+  --color-text: #3F1220;
+  --color-muted: #F0ECF2;
+  --color-border: #FECDD3;
+  --color-destructive: #DC2626;
+  --color-ring: #E11D48;
+
+  /* fonts — families must match the app.html <link> */
+  --font-heading: 'Fredoka', system-ui, sans-serif;
+  --font-body: 'Nunito', system-ui, sans-serif;
+}
