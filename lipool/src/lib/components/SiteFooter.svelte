@@ -16,8 +16,8 @@
     </div>
     <nav aria-label="Footer">
       <ul>
-        <!-- same-page section anchor — crawler-safe, no rel -->
-        <li><a href="#services">Services</a></li>
+        <!-- home services section — {base}-prefixed so it resolves from any page -->
+        <li><a href="{base}/#services">Services</a></li>
         <!-- rel=external: route lands in Phase 3; drop rel then -->
         <li><a href="{base}/gallery/" rel="external">Gallery</a></li>
         <!-- rel=external: route lands in Phase 3; drop rel then -->

@@ -6,8 +6,8 @@
   <nav aria-label="Primary">
     <a class="brand" href="{base}/">Lipool</a>
     <ul>
-      <!-- same-page section anchor — crawler-safe, no rel -->
-      <li><a class="nav-link" href="#services">Services</a></li>
+      <!-- home services section — {base}-prefixed so it resolves from any page -->
+      <li><a class="nav-link" href="{base}/#services">Services</a></li>
       <!-- rel=external: route lands in Phase 3; drop rel then -->
       <li><a class="nav-link" href="{base}/gallery/" rel="external">Gallery</a></li>
       <li>
