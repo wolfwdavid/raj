@@ -34,12 +34,12 @@
 
 ### Lidentist (dentist reviews + appointment lead-gen)
 
-- [ ] **DENT-01**: A patient can browse a directory of Long Island dentists (cards: name, practice, town, specialty, star rating + review count)
-- [ ] **DENT-02**: A patient can filter the directory by specialty and town (client-side over typed static data, results count announced accessibly)
-- [ ] **DENT-03**: A patient can open a dentist detail page (`/dentists/[slug]/`) with on-page review cards (stars + numeric value + text)
+- [x] **DENT-01**: A patient can browse a directory of Long Island dentists (cards: name, practice, town, specialty, star rating + review count)
+- [x] **DENT-02**: A patient can filter the directory by specialty and town (client-side over typed static data, results count announced accessibly)
+- [x] **DENT-03**: A patient can open a dentist detail page (`/dentists/[slug]/`) with on-page review cards (stars + numeric value + text)
 - [ ] **DENT-04**: A patient can request an appointment via a form (dentist pre-selectable) posting to the configurable FORM_ENDPOINT with real states only
-- [ ] **DENT-05**: All seeded dentists/reviews are unmistakably labeled as sample data (FTC Reviews Rule compliance gate — launch blocker)
-- [ ] **DENT-06**: The site meets its accessibility-exemplar bar: skip link, landmarks, aria-labeled ratings, 3px focus rings, 44px targets
+- [x] **DENT-05**: All seeded dentists/reviews are unmistakably labeled as sample data (FTC Reviews Rule compliance gate — launch blocker)
+- [x] **DENT-06**: The site meets its accessibility-exemplar bar: skip link, landmarks, aria-labeled ratings, 3px focus rings, 44px targets
 
 ### CannaWorldNews (global cannabis news)
 
@@ -100,11 +100,11 @@
 | POOL-02 | Phase 3 | Complete |
 | POOL-04 | Phase 3 | Complete |
 | POOL-05 | Phase 3 | Complete |
-| DENT-01 | Phase 3 | Pending |
-| DENT-02 | Phase 3 | Pending |
-| DENT-03 | Phase 3 | Pending |
-| DENT-05 | Phase 3 | Pending |
-| DENT-06 | Phase 3 | Pending |
+| DENT-01 | Phase 3 | Complete |
+| DENT-02 | Phase 3 | Complete |
+| DENT-03 | Phase 3 | Complete |
+| DENT-05 | Phase 3 | Complete |
+| DENT-06 | Phase 3 | Complete |
 | NEWS-01 | Phase 3 | Complete |
 | NEWS-02 | Phase 3 | Complete |
 | NEWS-03 | Phase 3 | Complete |
