@@ -43,9 +43,9 @@
 
 ### CannaWorldNews (global cannabis news)
 
-- [ ] **NEWS-01**: A reader sees an editorial front page (lead story + per-region sections) built from 12+ seeded markdown articles with region frontmatter
-- [ ] **NEWS-02**: A reader can open any article at `/articles/[slug]/` with kicker, headline, byline/date (`<time>` between headline and body), rendered markdown, and related-by-region links
-- [ ] **NEWS-03**: A reader can browse per-region rivers at `/region/[region]/` (Americas, Europe, Africa, Asia-Pacific)
+- [x] **NEWS-01**: A reader sees an editorial front page (lead story + per-region sections) built from 12+ seeded markdown articles with region frontmatter
+- [x] **NEWS-02**: A reader can open any article at `/articles/[slug]/` with kicker, headline, byline/date (`<time>` between headline and body), rendered markdown, and related-by-region links
+- [x] **NEWS-03**: A reader can browse per-region rivers at `/region/[region]/` (Americas, Europe, Africa, Asia-Pacific)
 - [ ] **NEWS-04**: Every article page emits correct meta/OG tags (title, description, article:published_time) with SITE_URL-driven absolute URLs
 - [ ] **NEWS-05**: The site displays an informational-only disclaimer (news reporting, not legal/medical advice) in the footer — compliance gate
 
@@ -105,9 +105,9 @@
 | DENT-03 | Phase 3 | Pending |
 | DENT-05 | Phase 3 | Pending |
 | DENT-06 | Phase 3 | Pending |
-| NEWS-01 | Phase 3 | Pending |
-| NEWS-02 | Phase 3 | Pending |
-| NEWS-03 | Phase 3 | Pending |
+| NEWS-01 | Phase 3 | Complete |
+| NEWS-02 | Phase 3 | Complete |
+| NEWS-03 | Phase 3 | Complete |
 | VFAM-03 | Phase 4 | Pending |
 | VFAM-04 | Phase 4 | Pending |
 | VFAM-05 | Phase 4 | Pending |

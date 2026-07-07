@@ -109,6 +109,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 |-------|----------------|--------|-----------|
 | 1. Deploy Pipeline | 0/2 | Not started | - |
 | 2. Per-Site Shells | 0/3 | Not started | - |
-| 3. Content + Routes | 0/5 | Not started | - |
+| 3. Content + Routes | 3/5 | In Progress|  |
 | 4. Conversion Paths | 0/2 | Not started | - |
 | 5. SEO + Compliance | 0/2 | Not started | - |
