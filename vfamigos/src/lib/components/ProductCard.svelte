@@ -7,14 +7,7 @@
   const initial = $derived(product.name.charAt(0).toUpperCase());
 </script>
 
-<!--
-  TEMPORARY rel="external": the /products/[slug]/ route is created in Task 3 of this
-  plan. Until then, this per-product link would be a dangling internal link and the
-  prerender crawler (which renders this card on both the home grid and /products/)
-  would follow it, 404, and fail the build. Task 3 strips this rel once the PDP route
-  and its entries() exist, making these plain crawlable internal links.
--->
-<a class="card" href="{base}/products/{product.slug}/" rel="external">
+<a class="card" href="{base}/products/{product.slug}/">
   <span class="art" style="background: {product.accent};" aria-hidden="true">
     <span class="monogram">{initial}</span>
   </span>
