@@ -54,7 +54,7 @@
 - [x] **QUAL-01**: Each site implements its committed design system (.planning/design/<site>.md): palette tokens, font pairing, layout patterns — four visually distinct sites
 - [x] **QUAL-02**: Every site passes `npm run check` (svelte-check) with zero errors
 - [x] **QUAL-03**: Every page meets baseline a11y: 4.5:1 text contrast, visible focus states, SVG icons (no emoji icons), semantic headings, reduced-motion respected
-- [ ] **QUAL-04**: Every site has per-page titles + meta descriptions; canonical/OG URLs derive from a configurable SITE_URL (never BASE_PATH)
+- [x] **QUAL-04**: Every site has per-page titles + meta descriptions; canonical/OG URLs derive from a configurable SITE_URL (never BASE_PATH)
 
 ## v2 Requirements
 
@@ -115,7 +115,7 @@
 | DENT-04 | Phase 4 | Complete |
 | NEWS-04 | Phase 5 | Pending |
 | NEWS-05 | Phase 5 | Pending |
-| QUAL-04 | Phase 5 | Pending |
+| QUAL-04 | Phase 5 | Complete |
 
 **Coverage:**
 - v1 requirements: 33 total (note: prior footer said 28 — corrected after enumerating INFRA×7, VFAM×6, POOL×5, DENT×6, NEWS×5, QUAL×4)

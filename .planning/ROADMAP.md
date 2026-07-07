@@ -97,7 +97,7 @@ Plans (Wave 1 = 04-01 and 04-02 run in parallel — disjoint site file sets):
 **Plans**: 2 plans
 
 Plans (Wave 1 = 05-01; Wave 2 = 05-02 depends on 05-01):
-- [ ] 05-01-PLAN.md — Hand-rolled Seo.svelte (per site) + SITE_URL config knob + <Seo> on all 15 pages/routes across the four sites (SITE_URL-driven title/description/canonical/OG, never BASE_PATH) — QUAL-04
+- [x] 05-01-PLAN.md — Hand-rolled Seo.svelte (per site) + SITE_URL config knob + <Seo> on all 15 pages/routes across the four sites (SITE_URL-driven title/description/canonical/OG, never BASE_PATH) — QUAL-04
 - [ ] 05-02-PLAN.md — cannaworldnews article:published_time + og:type=article + finalized informational-only footer disclaimer + CI Compliance Gate in deploy.yml (site-wide no-fake-success + per-page SEO meta + disclaimer + FTC label + no-aggregateRating) — NEWS-04, NEWS-05
 
 ## Progress

@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 04-02-PLAN.md
-last_updated: "2026-07-07T07:08:00.225Z"
+stopped_at: Completed 05-01-PLAN.md
+last_updated: "2026-07-07T07:38:30.924Z"
 progress:
   total_phases: 5
   completed_phases: 4
-  total_plans: 12
-  completed_plans: 12
+  total_plans: 14
+  completed_plans: 13
 ---
 
 # Project State
@@ -19,12 +19,12 @@ progress:
 See: .planning/PROJECT.md (updated 2026-07-06)
 
 **Core value:** Four distinct, production-quality, custom-domain-ready websites ship from one repo with one push — each with a real conversion path that works the moment real service keys are pasted in.
-**Current focus:** Phase 04 — conversion-paths
+**Current focus:** Phase 05 — seo-hardening-compliance-gate
 
 ## Current Position
 
-Phase: 5
-Plan: Not started
+Phase: 05 (seo-hardening-compliance-gate) — EXECUTING
+Plan: 2 of 2
 
 ## Performance Metrics
 
@@ -58,6 +58,7 @@ Plan: Not started
 | Phase 03 P05 | 14 | 2 tasks | 6 files |
 | Phase 04 P01 | 7 | 3 tasks | 8 files |
 | Phase 04 P02 | 7 | 2 tasks | 10 files |
+| Phase 05 P01 | 25 | 3 tasks | 23 files |
 
 ## Accumulated Context
 
@@ -92,6 +93,8 @@ Recent decisions affecting current work:
 - [Phase 04]: lipool /quote + lidentist /appointment share a duplicated native-POST LeadForm (method=POST action=FORM_ENDPOINT) with fetch progressive enhancement; identical submit logic so a diff catches drift
 - [Phase 04]: Honeypot _gotcha is off-screen via position:absolute (never display:none), aria-hidden + tabindex=-1; FORM_ENDPOINT empty => visible not-configured note, never a fake success (asserted in built-HTML greps)
 - [Phase 04]: lidentist /appointment reads ?dentist= client-side in an $effect to pre-select the dentist so the route prerenders with no query
+- [Phase 05]: SITE_URL defaults to live Pages origin+subpath; VITE_SITE_URL flips to custom domain at cutover with no code change
+- [Phase 05]: canonical/OG use $derived(SITE_URL + path) — absolute, SITE_URL-driven, never BASE_PATH, reactive across SPA nav
 
 ### Pending Todos
 
@@ -106,6 +109,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-07-07T06:54:18.874Z
-Stopped at: Completed 04-02-PLAN.md
+Last session: 2026-07-07T07:38:14.361Z
+Stopped at: Completed 05-01-PLAN.md
 Resume file: None
