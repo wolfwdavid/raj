@@ -31,8 +31,7 @@
         </a>
       </li>
       <li>
-        <!-- rel=external: /quote/ is a Phase-4 route; keep the crawler guard until then -->
-        <a class="cta" href="{base}/quote/" rel="external">Get Quote</a>
+        <a class="cta" href="{base}/quote/">Get Quote</a>
       </li>
     </ul>
   </nav>

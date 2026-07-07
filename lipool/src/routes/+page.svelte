@@ -11,8 +11,7 @@
       &amp; Suffolk. Licensed, insured, and local.
     </p>
     <div class="actions">
-      <!-- rel=external: /quote lands in Phase 4; keep the guard -->
-      <a class="cta" href="{base}/quote/" rel="external">Get a Free Quote</a>
+      <a class="cta" href="{base}/quote/">Get a Free Quote</a>
       <a class="call" href="tel:+15165550100" aria-label="Call Lipool at (516) 555-0100">
         <svg
           class="icon"
@@ -138,8 +137,7 @@
         </svg>
         <h3>{service.title}</h3>
         <p>{service.blurb}</p>
-        <!-- rel=external: /quote lands in Phase 4; keep the guard -->
-        <a class="service-link" href="{base}/quote/" rel="external">
+        <a class="service-link" href="{base}/quote/">
           Get a quote
           <span aria-hidden="true">&rarr;</span>
         </a>
