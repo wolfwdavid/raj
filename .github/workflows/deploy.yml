@@ -1,0 +1,87 @@
+# .github/workflows/deploy.yml
+# FIRST DEPLOY: enablement:true below often no-ops on a brand-new repo (Pages first-enable race).
+# If the first green run 404s, set Settings -> Pages -> Source = "GitHub Actions" by hand,
+# then re-run this workflow via the "Run workflow" button (workflow_dispatch).
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false                       # surface all four sites' status every run
+      matrix:
+        site: [vfamigos, lipool, lidentist, cannaworldnews]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: ${{ matrix.site }}/package-lock.json
+      - run: npm ci
+        working-directory: ${{ matrix.site }}
+      - run: npm run build
+        working-directory: ${{ matrix.site }}
+        env:
+          BASE_PATH: /${{ github.event.repository.name }}/${{ matrix.site }}   # e.g. /raj/vfamigos
+      - uses: actions/upload-artifact@v4       # plain artifact — NOT the Pages-specific uploader
+        with:
+          name: site-${{ matrix.site }}
+          path: ${{ matrix.site }}/build
+          if-no-files-found: error
+          include-hidden-files: true
+
+  assemble:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4              # for pages-root/
+      - uses: actions/download-artifact@v4     # nests each under _artifacts/site-<name>/
+        with:
+          path: _artifacts
+          pattern: site-*
+      - name: Assemble _site
+        run: |
+          set -euo pipefail
+          mkdir -p _site
+          cp pages-root/index.html _site/index.html
+          cp pages-root/404.html   _site/404.html
+          cp pages-root/.nojekyll  _site/.nojekyll
+          for site in vfamigos lipool lidentist cannaworldnews; do
+            test -d "_artifacts/site-$site" || { echo "::error::missing artifact for $site"; exit 1; }
+            mkdir -p "_site/$site"
+            cp -r "_artifacts/site-$site/." "_site/$site/"
+            test -f "_site/$site/index.html" || { echo "::error::missing index.html for $site"; exit 1; }
+          done
+          count=$(ls -1 _site/*/index.html | wc -l)
+          test "$count" -eq 4 || { echo "::error::expected 4 site index.html, got $count"; exit 1; }
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true                     # idempotent; may no-op on first run (see header)
+      - uses: actions/upload-pages-artifact@v3 # the ONE Pages artifact
+        with:
+          path: _site
+
+  deploy:
+    needs: assemble
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
