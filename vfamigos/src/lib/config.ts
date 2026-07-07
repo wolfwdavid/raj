@@ -14,3 +14,9 @@
 // '' and the /cart/ checkout button renders DISABLED with a visible "not yet configured"
 // note — NEVER a simulated success.
 export const STRIPE_PAYMENT_LINK: string = import.meta.env.VITE_STRIPE_PAYMENT_LINK ?? '';
+
+// SITE_URL: the site's indexable canonical origin. Drives absolute canonical + OG URLs
+// (NEVER BASE_PATH). Defaults to the live Pages origin+subpath so URLs resolve today; at
+// custom-domain cutover set VITE_SITE_URL='https://vfamigos.com' — one knob, no code change.
+// No trailing slash (paths passed to <Seo> carry the leading + trailing slash).
+export const SITE_URL: string = import.meta.env.VITE_SITE_URL ?? 'https://wolfwdavid.github.io/raj/vfamigos';
