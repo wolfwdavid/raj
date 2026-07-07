@@ -17,20 +17,20 @@
 
 ### Vfamigos (collectibles e-commerce)
 
-- [ ] **VFAM-01**: A shopper can browse a product grid of original Amigo characters (name, series, price, per-character art) on the home page
-- [ ] **VFAM-02**: A shopper can open a product page per character with story/bio, traits, price, and add-to-cart (`/products/[slug]/`)
+- [x] **VFAM-01**: A shopper can browse a product grid of original Amigo characters (name, series, price, per-character art) on the home page
+- [x] **VFAM-02**: A shopper can open a product page per character with story/bio, traits, price, and add-to-cart (`/products/[slug]/`)
 - [ ] **VFAM-03**: A shopper can add/remove items and change quantities in a cart that persists across page reloads (runes store + localStorage)
 - [ ] **VFAM-04**: A shopper can proceed to checkout via a Stripe Payment Link anchor from config.ts (placeholder URL, real-ready; disabled-with-notice state when placeholder)
 - [ ] **VFAM-05**: A shopper returning from Stripe lands on a prerendered `/thanks/` page (the only success state — nothing simulated in-app)
-- [ ] **VFAM-06**: A shopper sees brand storytelling (hero + about section) consistent with the vfamigos design system
+- [x] **VFAM-06**: A shopper sees brand storytelling (hero + about section) consistent with the vfamigos design system
 
 ### Lipool (pool contractor lead-gen)
 
-- [ ] **POOL-01**: A homeowner sees services, benefit-led hero, and Long Island trust signals (licensed/insured, years, Nassau & Suffolk service areas) on the home page
-- [ ] **POOL-02**: A homeowner can view a project gallery page with descriptive alt text
+- [x] **POOL-01**: A homeowner sees services, benefit-led hero, and Long Island trust signals (licensed/insured, years, Nassau & Suffolk service areas) on the home page
+- [x] **POOL-02**: A homeowner can view a project gallery page with descriptive alt text
 - [ ] **POOL-03**: A homeowner can submit a quote request form (≤5 fields, honeypot, visible labels, inline errors) that POSTs to a configurable FORM_ENDPOINT and shows real success/error states only
-- [ ] **POOL-04**: A homeowner can tap a click-to-call phone link present on every page
-- [ ] **POOL-05**: The site emits HomeAndConstructionBusiness JSON-LD with areaServed and consistent NAP in the footer (no aggregateRating without visible reviews)
+- [x] **POOL-04**: A homeowner can tap a click-to-call phone link present on every page
+- [x] **POOL-05**: The site emits HomeAndConstructionBusiness JSON-LD with areaServed and consistent NAP in the footer (no aggregateRating without visible reviews)
 
 ### Lidentist (dentist reviews + appointment lead-gen)
 
@@ -93,13 +93,13 @@
 | QUAL-03 | Phase 2 | Complete |
 | INFRA-05 | Phase 3 | Pending |
 | INFRA-07 | Phase 3 | Pending |
-| VFAM-01 | Phase 3 | Pending |
-| VFAM-02 | Phase 3 | Pending |
-| VFAM-06 | Phase 3 | Pending |
-| POOL-01 | Phase 3 | Pending |
-| POOL-02 | Phase 3 | Pending |
-| POOL-04 | Phase 3 | Pending |
-| POOL-05 | Phase 3 | Pending |
+| VFAM-01 | Phase 3 | Complete |
+| VFAM-02 | Phase 3 | Complete |
+| VFAM-06 | Phase 3 | Complete |
+| POOL-01 | Phase 3 | Complete |
+| POOL-02 | Phase 3 | Complete |
+| POOL-04 | Phase 3 | Complete |
+| POOL-05 | Phase 3 | Complete |
 | DENT-01 | Phase 3 | Pending |
 | DENT-02 | Phase 3 | Pending |
 | DENT-03 | Phase 3 | Pending |
