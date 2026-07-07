@@ -1,5 +1,7 @@
 <script lang="ts">
   import { base } from '$app/paths';
+  import ProductCard from '$lib/components/ProductCard.svelte';
+  import { products } from '$lib/data/products';
 </script>
 
 <section class="hero">
@@ -12,6 +14,33 @@
     </p>
     <!-- rel=external: route lands in Phase 3; drop rel then -->
     <a class="cta" href="{base}/products/" rel="external">Shop the Amigos</a>
+  </div>
+</section>
+
+<section id="products" class="grid-section" aria-labelledby="grid-heading">
+  <div class="section-inner">
+    <h2 id="grid-heading">The Collection</h2>
+    <p class="section-lead">Every Amigo is one of a kind — pick the personality that speaks to you.</p>
+    <ul class="grid">
+      {#each products as product (product.slug)}
+        <li><ProductCard {product} /></li>
+      {/each}
+    </ul>
+  </div>
+</section>
+
+<section id="about" class="about-teaser" aria-labelledby="about-heading">
+  <div class="section-inner">
+    <h2 id="about-heading">Why the Amigos?</h2>
+    <p>
+      The Amigos started as a promise: that a collectible could carry a little courage, kindness,
+      or curiosity with it. Each character is drawn from a trait worth celebrating and given a
+      name, a season, and a story of their own.
+    </p>
+    <p>
+      We build every Amigo as an original — no borrowed faces, no cheap clip art, just characters
+      made to be kept. <a class="about-link" href="{base}/about/">Read the whole story</a>.
+    </p>
   </div>
 </section>
 
@@ -86,5 +115,46 @@
     .blob {
       animation: none;
     }
+  }
+
+  .section-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+  .grid-section {
+    padding: 1rem 0 3rem;
+  }
+  h2 {
+    font-size: 2rem;
+    color: var(--color-foreground);
+    margin: 0 0 0.5rem;
+  }
+  .section-lead {
+    font-size: 1.0625rem;
+    color: var(--color-text);
+    margin: 0 0 2rem;
+  }
+  .grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+  .about-teaser {
+    padding: 2.5rem 0 4rem;
+  }
+  .about-teaser p {
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    max-width: 680px;
+    margin: 0 0 1rem;
+  }
+  .about-link {
+    color: var(--color-accent);
+    font-weight: 700;
   }
 </style>
