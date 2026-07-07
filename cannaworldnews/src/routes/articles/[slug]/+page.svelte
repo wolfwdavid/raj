@@ -13,6 +13,8 @@
   title={`${article.title} — CannaWorldNews`}
   description={article.dek || article.title}
   path={`/articles/${article.slug}/`}
+  type="article"
+  publishedTime={article.date}
 />
 
 <article class="article">

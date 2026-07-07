@@ -24,8 +24,10 @@
       </ul>
     </nav>
 
-    <!-- shell stub: full cannabis/FTC compliance copy is Phase 5 / NEWS-05 -->
-    <p class="disclaimer">Informational only — not legal or medical advice.</p>
+    <p class="disclaimer">
+      CannaWorldNews reports on cannabis policy and industry developments worldwide.
+      Informational only — not legal or medical advice.
+    </p>
   </div>
 </footer>
 
